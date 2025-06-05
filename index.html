@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lebenslauf - Wissem Charni</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            min-height: 297mm;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            page-break-inside: avoid;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            font-weight: 300;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            font-size: 0.85em;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .linkedin-link {
+            color: #74b9ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .linkedin-link:hover {
+            color: #0984e3;
+        }
+
+        .main-content {
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            min-height: calc(297mm - 200px);
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            padding: 25px 20px;
+            border-right: 3px solid #e9ecef;
+        }
+
+        .content {
+            padding: 25px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #3498db;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 25px;
+            height: 2px;
+            background: #e74c3c;
+        }
+
+        .job {
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            margin-bottom: 6px;
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.05em;
+        }
+
+        .company {
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        .date {
+            color: #7f8c8d;
+            font-size: 0.85em;
+            font-style: italic;
+        }
+
+        .job-description {
+            margin-top: 8px;
+        }
+
+        .job-description ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-description li {
+            margin-bottom: 4px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 0.9em;
+        }
+
+        .job-description li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 0.7em;
+            top: 1px;
+        }
+
+        .profile-text {
+            font-size: 0.9em;
+            line-height: 1.5;
+            color: #555;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .skill-category {
+            margin-bottom: 12px;
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            font-size: 0.9em;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .skill-tag {
+            background: #3498db;
+            color: white;
+            padding: 3px 6px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+
+        .skill-tag.secondary {
+            background: #95a5a6;
+        }
+
+        .languages {
+            margin-top: 15px;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+            padding: 6px 10px;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .language-name {
+            font-weight: 500;
+            font-size: 0.85em;
+        }
+
+        .language-level {
+            font-size: 0.8em;
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        .education {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid #3498db;
+        }
+
+        .education h3 {
+            color: #2c3e50;
+            margin-bottom: 4px;
+            font-size: 0.95em;
+        }
+
+        .education .institution {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 4px;
+            font-size: 0.9em;
+        }
+
+        .education .date {
+            color: #7f8c8d;
+            font-size: 0.8em;
+            margin-bottom: 8px;
+        }
+
+        .thesis {
+            font-style: italic;
+            color: #555;
+            font-size: 0.8em;
+            margin-bottom: 6px;
+        }
+
+        .subjects {
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        @media print {
+            body { 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact;
+            }
+            .container { 
+                max-width: none; 
+                margin: 0; 
+                box-shadow: none;
+            }
+            .header {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+            .section {
+                /* Entfernt: page-break-inside: avoid für bessere Aufteilung */
+                break-inside: auto;
+            }
+            .job {
+                /* Beibehalten für einzelne Jobs */
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            /* Verhindert Seitenumbruch nach Profil-Sektion */
+            .section:first-of-type {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+            @page {
+                margin: 0.5in;
+                size: A4;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="assets/image.jpeg" alt="Wissem Charni" class="profile-photo">
+            <div class="header-info">
+                <h1>WISSEM CHARNI</h1>
+                <div class="subtitle">Software Developer</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>wissemcherni75@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>+49 173 9106007</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Stockstadt am Main, Deutschland</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>🛂</span>
+                        <span>Arbeitserlaubnis Deutschland</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>💼</span>
+                        <a href="https://www.linkedin.com/in/wissem-charni-b464b6115/" class="linkedin-link" target="_blank">LinkedIn Profil</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="section">
+                    <h2>Technische Skills</h2>
+                    <div class="skills-grid">
+                            <div class="skill-category">
+                            <h3>Hauptsprachen</h3>
+                            <div class="skill-tags">
+                                <div class="skill-row">
+                                    <span class="skill-tag">Java</span>
+                                    <span class="skill-tag">⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <div class="skill-row">
+                                    <span class="skill-tag">C++</span>
+                                    <span class="skill-tag">⭐⭐⭐⭐</span>
+                                </div>
+                                <div class="skill-row">
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <div class="skill-row">
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                            </div>
+                        <div class="skill-category">
+                            <h3>Backend</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag secondary">Spring</span>
+                                <span class="skill-tag secondary">Django</span>
+                                <span class="skill-tag secondary">Flask</span>
+                                <span class="skill-tag secondary">Node.js</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Datenbanken</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag secondary">PostgreSQL</span>
+                                <span class="skill-tag secondary">MySQL</span>
+                                <span class="skill-tag secondary">MongoDB</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>DevOps & Tools</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag secondary">Docker</span>
+                                <span class="skill-tag secondary">Git</span>
+                                <span class="skill-tag secondary">Jenkins</span>
+                                <span class="skill-tag secondary">Linux</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section languages">
+                    <h2>Sprachen</h2>
+                    <div class="language-item">
+                        <span class="language-name">Deutsch</span>
+                        <span class="language-level">C1</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Englisch</span>
+                        <span class="language-level">C1</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Arabisch</span>
+                        <span class="language-level">Muttersprache</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Französisch</span>
+                        <span class="language-level">Muttersprache</span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Ausbildung</h2>
+                    <div class="education">
+                        <h3>Bachelor of Science Informatik</h3>
+                        <div class="institution">Hochschule Darmstadt</div>
+                        <div class="date">2018 - 2023</div>
+                        <div class="thesis"><strong>Abschlussarbeit:</strong> Evaluating QR-PACE On ARM Cortex-M4</div>
+                        <div class="subjects">Software Engineering, Algorithmen, Embedded Systems, KI-Grundlagen</div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="content">
+                <div class="section">
+                    <h2>Profil</h2>
+                    <p class="profile-text">
+                        Erfahrener Software Developer mit 3+ Jahren Praxis in Full-Stack-Entwicklung. Spezialisiert auf Backend-Entwicklung mit Java, C++ und Python in den Bereichen Telekommunikation und Logistik. Nachgewiesene Erfolge bei der Optimierung von Geschäftsprozessen und der Modernisierung von Legacy-Systemen.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h2>Berufserfahrung</h2>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-title">Software Developer</div>
+                            <div class="company">Erhard Partner Group, Alzenau</div>
+                            <div class="date">April 2024 – Dezember 2024</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Entwicklung und Optimierung leistungsstarker C++-Anwendungen für die EPG ONE Supply Chain Suite</li>
+                                <li>Erweiterung und Verbesserung von Funktionalitäten im Warehouse Management System (WMS)</li>
+                                <li>Implementierung neuer Funktionen basierend auf individuellen Kundenanforderungen</li>
+                                <li>Modernisierung von Legacy-Systemen durch Migration von COBOL zu moderner C++-Architektur</li>
+                                <li>Mitarbeit im agilen Entwicklungsteam mit Einsatz von Git und GitLab zur Versionskontrolle</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-title">Embedded Systems Research Intern</div>
+                            <div class="company">Hochschule Darmstadt</div>
+                            <div class="date">April 2023 – November 2023</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Forschungsunterstützung bei QR-PACE-Algorithmus auf ARM Cortex-M4</li>
+                                <li>Performance-Optimierung für ressourcenbeschränkte Embedded Systems</li>
+                                <li>Kryptographische Implementierungen: Effizienz- und Ressourcenanalyse</li>
+                                <li>Debugging und Profiling mit GDB für Mikrocontroller</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-title">Software Developer Trainee</div>
+                            <div class="company">Deutsche Telekom, Hannover</div>
+                            <div class="date">August 2021 – März 2023</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Entwicklung von Python-Skripten für Netzwerk-Automatisierung</li>
+                                <li><strong>Ergebnis:</strong> Systemeffizienz um 15% gesteigert</li>
+                                <li>Zusammenarbeit mit Senior Developers bei Solution-Integration</li>
+                                <li>Professionelle Entwicklung mit Git und Eclipse</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-title">Übungsleiter Programmierung</div>
+                            <div class="company">Hochschule Darmstadt</div>
+                            <div class="date">Februar 2019 – August 2019</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Unterricht für 30+ Studierende in C++ Programmierung</li>
+                                <li>Vermittlung von Algorithmen und Datenstrukturen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Persönliche Stärken</h2>
+                    <div class="job-description">
+                        <ul>
+                            <li>Analytisches Problemlösen und strukturiertes Arbeiten</li>
+                            <li>Teamfähigkeit und agile Arbeitsweise (Scrum)</li>
+                            <li>Hohe Lernbereitschaft für neue Technologien</li>
+                            <li>Kundenorientierte Kommunikation</li>
+                            <li>Selbstständige Projektbearbeitung</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
