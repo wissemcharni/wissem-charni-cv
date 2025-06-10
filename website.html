@@ -80,9 +80,9 @@
             top: 50%;
             transform: translateY(-50%);
             width: 60%;
-            height: 120%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle cx="200" cy="200" r="180" fill="none" stroke="%2327ae60" stroke-width="2" opacity="0.1"/></svg>') no-repeat center;
-            opacity: 0.3;
+            height: 110%;
+            background: url("assets/image.jpeg") no-repeat center;
+            opacity: 0.15;
         }
 
         .hero-content {
@@ -135,6 +135,17 @@
             animation: fadeInRight 1s ease 0.6s both;
         }
 
+        /* Profile Picture Styles */
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Update the existing .profile-pic styles */
         .profile-pic {
             width: 300px;
             height: 300px;
@@ -143,23 +154,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 8rem;
-            color: white;
             position: relative;
             overflow: hidden;
+            padding: 5px; /* This creates the border effect */
         }
 
+        /* Remove the ::before pseudo-element styling since we're using an image now */
         .profile-pic::before {
-            content: '';
-            position: absolute;
-            inset: 3px;
-            border-radius: 50%;
-            background: #2c3e50;
+            display: none;
         }
 
-        .profile-pic span {
-            position: relative;
-            z-index: 1;
+        /* Optional: Add a subtle shadow and hover effect */
+        .profile-pic:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover .profile-img {
+            filter: brightness(1.1);
         }
 
         /* Skills Section */
@@ -181,42 +193,57 @@
             color: #27ae60;
         }
 
-        .skills-grid {
+        .skills-categories {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
         }
 
-        .skill-item {
-            background: rgba(255, 255, 255, 0.1);
+        .skill-category {
+            background: rgba(255, 255, 255, 0.05);
             padding: 2rem;
             border-radius: 15px;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(39, 174, 96, 0.2);
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            color: #27ae60;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
             transition: transform 0.3s ease;
         }
 
         .skill-item:hover {
-            transform: translateY(-10px);
+            transform: translateX(10px);
         }
 
         .skill-name {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
 
         .skill-bar {
-            height: 10px;
+            height: 8px;
             background: rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
+            border-radius: 4px;
             overflow: hidden;
         }
 
         .skill-progress {
             height: 100%;
             background: linear-gradient(90deg, #27ae60, #2ecc71);
-            border-radius: 5px;
+            border-radius: 4px;
             transition: width 2s ease;
         }
 
@@ -449,6 +476,10 @@
                 font-size: 2.5rem;
             }
 
+            .skills-categories {
+                grid-template-columns: 1fr;
+            }
+
             .timeline::before {
                 left: 20px;
             }
@@ -466,15 +497,251 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* About Me Section */
+        .about {
+            padding: 6rem 0;
+            background: #34495e;
+        }
+
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(39, 174, 96, 0.2);
+            text-align: left;
+        }
+
+        .about-subtitle {
+            color: #27ae60;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .highlight-item {
+            padding: 1.5rem;
+            background: rgba(39, 174, 96, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(39, 174, 96, 0.3);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        #languagesBox:hover {
+            transform: translateY(-5px);
+            background: rgba(39, 174, 96, 0.15);
+            cursor: pointer;
+        }
+
+        .highlight-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-text {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design for About Section */
+        @media (max-width: 768px) {
+            .about-content {
+                padding: 2rem;
+            }
+            
+            .about-highlights {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .about-subtitle {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Languages Popup Styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #2c3e50;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 2px solid rgba(39, 174, 96, 0.3);
+            animation: slideIn 0.3s ease;
+        }
+
+        .popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(39, 174, 96, 0.3);
+        }
+
+        .popup-header h3 {
+            color: #27ae60;
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .close-popup {
+            font-size: 2rem;
+            color: #27ae60;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            line-height: 1;
+        }
+
+        .close-popup:hover {
+            color: #2ecc71;
+            transform: scale(1.1);
+        }
+
+        .languages-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(39, 174, 96, 0.2);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .language-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .language-flag {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .language-info {
+            flex: 1;
+        }
+
+        .language-info h4 {
+            color: #27ae60;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .language-level {
+            color: #ecf0f1;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .language-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .language-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #27ae60, #2ecc71);
+            border-radius: 3px;
+            transition: width 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+            to { 
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        /* Mobile responsiveness for popup */
+        @media (max-width: 768px) {
+            .popup-content {
+                width: 95%;
+                padding: 1.5rem;
+                max-height: 85vh;
+            }
+            
+            .language-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .language-flag {
+                font-size: 3rem;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">R)</div>
+            <div class="logo">WC</div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link active">HOME</a></li>
+                <li><a href="#about" class="nav-link">ABOUT</a></li>
                 <li><a href="#skills" class="nav-link">SKILLS</a></li>
                 <li><a href="#portfolio" class="nav-link">PORTFOLIO</a></li>
                 <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
@@ -493,133 +760,238 @@
             </div>
             <div class="hero-image">
                 <div class="profile-pic">
-                    <span>WC</span>
+                    <img src="assets/image.jpeg" alt="Wissem Charni" class="profile-img">
                 </div>
             </div>
         </div>
     </section>
+    <!-- About Me Section -->
+<!-- About Me Section -->
+<section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title">00 ABOUT ME</h2>
+        <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem;">Wer ich bin und was mich antreibt</p>
+        
+        <div class="about-container">
+            <div class="about-content">
+                <h3 class="about-subtitle">Hallo! Ich bin Wissem Charni</h3>
+                <p>Als Junior Software Developer bringe ich eine Leidenschaft für Technologie und Innovation mit. Meine Reise in der Softwareentwicklung begann während meines Studiums und hat sich durch praktische Erfahrungen in verschiedenen Unternehmen stetig weiterentwickelt.</p>
+                
+                <p>Ich spezialisiere mich auf die Entwicklung effizienter und skalierbarer Softwarelösungen, mit besonderem Fokus auf Backend-Entwicklung, Embedded Systems und Automatisierung. Meine Erfahrung reicht von der Arbeit mit modernen Programmiersprachen bis hin zur Optimierung komplexer Algorithmen.</p>
+                
+                <p>Was mich besonders auszeichnet, ist meine Fähigkeit, komplexe technische Herausforderungen zu analysieren und innovative Lösungen zu entwickeln. Ich glaube daran, dass guter Code nicht nur funktional, sondern auch elegant und wartbar sein sollte.</p>
+                
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-number">3+</div>
+                        <div class="highlight-text">Jahre Erfahrung</div>
+                    </div>
+                    <div class="highlight-item" id="languagesBox">
+                        <div class="highlight-number">4</div>
+                        <div class="highlight-text">Sprachen</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-number">5+</div>
+                        <div class="highlight-text">Programmiersprachen</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- Languages Popup -->
+<div id="languagesPopup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="popup-header">
+            <h3>Meine Sprachen</h3>
+            <span class="close-popup">&times;</span>
+        </div>
+        <div class="languages-grid">
+            <div class="language-item">
+                <div class="language-flag">🇹🇳</div>
+                <div class="language-info">
+                    <h4>العربية (Arabisch)</h4>
+                    <div class="language-level">Muttersprache</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">🇫🇷</div>
+                <div class="language-info">
+                    <h4>Français (Französisch)</h4>
+                    <div class="language-level">Muttersprache</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">🇩🇪</div>
+                <div class="language-info">
+                    <h4>Deutsch</h4>
+                    <div class="language-level">C1 Niveau</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">🇬🇧</div>
+                <div class="language-info">
+                    <h4>English</h4>
+                    <div class="language-level">C1 Niveau</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
             <h2 class="section-title">01 PROFESSIONAL</h2>
             <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem;">Meine Technische Skills</p>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Python</span>
-                        <span>95%</span>
+            
+            <div class="skills-categories">
+                <!-- Programming Languages -->
+                <div class="skill-category">
+                    <h3 class="category-title">Programmiersprachen</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Python</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 95%"></div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Java</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Java</span>
-                        <span>90%</span>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>C++</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>C++</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>HTML & CSS</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>JavaScript</span>
-                        <span>70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 70%"></div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>C#</span>
+                            <span>40%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 40%"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>C#</span>
-                        <span>40%</span>
+
+                <!-- Web Development -->
+                <div class="skill-category">
+                    <h3 class="category-title">Web Development</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>HTML & CSS</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 40%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>PostgreSQL</span>
-                        <span>70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 70%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>MySQL</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>JavaScript</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>MongoDB</span>
-                        <span>80%</span>
+
+                <!-- Databases -->
+                <div class="skill-category">
+                    <h3 class="category-title">Datenbanken</h3>  
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>MySQL</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>PostgreSQL</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Docker</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Github Actions</span>
-                        <span>70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 70%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Linux</span>
-                        <span>70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 70%"></div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>MongoDB</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Git</span>
-                        <span>95%</span>
+
+                <!-- DevOps & Tools -->
+                <div class="skill-category">
+                    <h3 class="category-title">DevOps & Tools</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Git</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 95%"></div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Docker</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>GitHub Actions</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Linux</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -669,28 +1041,28 @@
             <h2 class="section-title">03 EXPERIENCE</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">2023-2025</div>
-                    <div class="timeline-title">Senior UX/UI Designer</div>
-                    <div class="timeline-company">TECH INNOVATIONS GMBH</div>
-                    <p>Leitung des Design-Teams und Entwicklung von benutzerfreundlichen Interfaces für Web- und Mobile-Anwendungen.</p>
+                    <div class="timeline-date">April 2024 – Dezember 2024</div>
+                    <div class="timeline-title">Software Developer</div>
+                    <div class="timeline-company">Erhard Partner Group, Alzenau</div>
+                    <p>Entwicklung und Optimierung leistungsstarker C++ Anwendungen für die EPG ONE Supply Chain Suite</p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2021-2023</div>
-                    <div class="timeline-title">Frontend Developer</div>
-                    <div class="timeline-company">DIGITAL SOLUTIONS AG</div>
-                    <p>Entwicklung responsiver Websites und Web-Anwendungen mit modernen JavaScript-Frameworks.</p>
+                    <div class="timeline-date">April 2023 – November 2023</div>
+                    <div class="timeline-title">Embedded Systems Research Intern</div>
+                    <div class="timeline-company">Hochschule Darmstadt</div>
+                    <p>Forschungsunterstützung bei QR-PACE-Algorithmus auf ARMCortex-M4</p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2019-2021</div>
-                    <div class="timeline-title">Web Designer</div>
-                    <div class="timeline-company">CREATIVE STUDIO</div>
-                    <p>Design und Umsetzung von Corporate Websites und Online-Marketing-Materialien.</p>
+                    <div class="timeline-date">August 2021 – März 2023</div>
+                    <div class="timeline-title">Software Developer Trainee</div>
+                    <div class="timeline-company">Deutsche Telekom, Hannover</div>
+                    <p>Entwicklung von Python-Skripten für Netzwerk-Automatisierung</p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2017-2019</div>
-                    <div class="timeline-title">Junior Developer</div>
-                    <div class="timeline-company">STARTUP COMPANY</div>
-                    <p>Erste berufliche Erfahrungen in der Webentwicklung mit WordPress und PHP.</p>
+                    <div class="timeline-date">Februar 2019 – August 2019</div>
+                    <div class="timeline-title">Übungsleiter Programmierung</div>
+                    <div class="timeline-company">Hochschule Darmstadt</div>
+                    <p>Übungen betreuen und Hausaufgaben kontrollieren und korrigieren</p>
                 </div>
             </div>
         </div>
@@ -702,8 +1074,8 @@
             <div class="contact-info">
                 <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">CONTACT</h2>
                 <p style="margin-bottom: 2rem;">Haben Sie ein Projekt im Kopf? Lassen Sie uns darüber sprechen und gemeinsam etwas Großartiges schaffen.</p>
-                <p><strong>Email:</strong> info@robertcaro.de</p>
-                <p><strong>Tel:</strong> +49-123-456-7890</p>
+                <p><strong>Email:</strong> wissemcherni75@gmail.com</p>
+                <p><strong>Tel:</strong> +49-173-910-6007</p>
             </div>
             <div class="contact-form">
                 <form id="contactForm">
@@ -821,6 +1193,74 @@
             
             item.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Skill category animations
+        document.querySelectorAll('.skill-category').forEach((category, index) => {
+            category.style.opacity = '0';
+            category.style.transform = 'translateY(30px)';
+            category.style.transition = 'all 0.6s ease';
+            category.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        const categoryObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.skill-category').forEach(category => {
+            categoryObserver.observe(category);
+        });
+
+                // Languages Popup Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const languagesBox = document.getElementById('languagesBox');
+            const popup = document.getElementById('languagesPopup');
+            const closeBtn = document.querySelector('.close-popup');
+
+            // Open popup when languages box is clicked
+            languagesBox.addEventListener('click', function() {
+                popup.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                
+                // Animate progress bars
+                setTimeout(() => {
+                    const progressBars = popup.querySelectorAll('.language-progress');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                }, 200);
+            });
+
+            // Close popup when X is clicked
+            closeBtn.addEventListener('click', function() {
+                popup.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable background scrolling
+            });
+
+            // Close popup when clicking outside of it
+            popup.addEventListener('click', function(e) {
+                if (e.target === popup) {
+                    popup.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Close popup with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && popup.style.display === 'block') {
+                    popup.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
             });
         });
     </script>
