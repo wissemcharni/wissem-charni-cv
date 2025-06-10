@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lebenslauf - Wissem Charni</title>
+    <title>Portfolio - Junior Software Developer</title>
     <style>
         * {
             margin: 0;
@@ -12,544 +12,1467 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.4;
-            color: #333;
-            background: white;
+            font-family: 'Arial', sans-serif;
+            background: #2c3e50;
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(44, 62, 80, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #27ae60;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            right: -20%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60%;
+            height: 110%;
+            background: url("assets/image.jpeg") no-repeat center;
+            opacity: 0.15;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-text .highlight {
+            color: #27ae60;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(39, 174, 96, 0.3);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInRight 1s ease 0.6s both;
+        }
+
+        /* Profile Picture Styles */
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Update the existing .profile-pic styles */
+        .profile-pic {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 5px; /* This creates the border effect */
+        }
+
+        /* Remove the ::before pseudo-element styling since we're using an image now */
+        .profile-pic::before {
+            display: none;
+        }
+
+        /* Optional: Add a subtle shadow and hover effect */
+        .profile-pic:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover .profile-img {
+            filter: brightness(1.1);
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 6rem 0;
+            background: #34495e;
         }
 
         .container {
-            max-width: 210mm;
+            max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            min-height: 297mm;
+            padding: 0 2rem;
         }
 
-        .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            padding: 30px;
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            page-break-inside: avoid;
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #27ae60;
         }
 
-        .profile-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid rgba(255,255,255,0.3);
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-
-        .header-info {
-            flex: 1;
-        }
-
-        .header h1 {
-            font-size: 2.2em;
-            font-weight: 300;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-        }
-
-        .header .subtitle {
-            font-size: 1.1em;
-            font-weight: 300;
-            opacity: 0.9;
-            margin-bottom: 15px;
-        }
-
-        .contact-info {
+        .skills-categories {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            font-size: 0.85em;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .linkedin-link {
-            color: #74b9ff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .linkedin-link:hover {
-            color: #0984e3;
-        }
-
-        .main-content {
-            padding: 0;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            min-height: calc(297mm - 200px);
-        }
-
-        .sidebar {
-            background: #f8f9fa;
-            padding: 25px 20px;
-            border-right: 3px solid #e9ecef;
-        }
-
-        .content {
-            padding: 25px;
-        }
-
-        .section {
-            margin-bottom: 25px;
-        }
-
-        .section h2 {
-            color: #2c3e50;
-            font-size: 1.2em;
-            font-weight: 600;
-            margin-bottom: 12px;
-            padding-bottom: 6px;
-            border-bottom: 2px solid #3498db;
-            position: relative;
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 25px;
-            height: 2px;
-            background: #e74c3c;
-        }
-
-        .job {
-            margin-bottom: 18px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .job:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-
-        .job-header {
-            margin-bottom: 6px;
-        }
-
-        .job-title {
-            font-weight: 600;
-            color: #2c3e50;
-            font-size: 1.05em;
-        }
-
-        .company {
-            color: #3498db;
-            font-weight: 500;
-        }
-
-        .date {
-            color: #7f8c8d;
-            font-size: 0.85em;
-            font-style: italic;
-        }
-
-        .job-description {
-            margin-top: 8px;
-        }
-
-        .job-description ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .job-description li {
-            margin-bottom: 4px;
-            padding-left: 15px;
-            position: relative;
-            font-size: 0.9em;
-        }
-
-        .job-description li::before {
-            content: '▶';
-            position: absolute;
-            left: 0;
-            color: #3498db;
-            font-size: 0.7em;
-            top: 1px;
-        }
-
-        .profile-text {
-            font-size: 0.9em;
-            line-height: 1.5;
-            color: #555;
-            text-align: justify;
-        }
-
-        .skills-grid {
-            display: grid;
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
         }
 
         .skill-category {
-            margin-bottom: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(39, 174, 96, 0.2);
         }
 
-        .skill-category h3 {
-            color: #2c3e50;
-            font-size: 0.9em;
-            margin-bottom: 6px;
-            font-weight: 600;
+        .category-title {
+            font-size: 1.5rem;
+            color: #27ae60;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: bold;
         }
 
-        .skill-tags {
+        .skill-item {
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateX(10px);
+        }
+
+        .skill-name {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
             display: flex;
-            flex-wrap: wrap;
-            gap: 4px;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .skill-tag {
-            background: #3498db;
+        .skill-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #27ae60, #2ecc71);
+            border-radius: 4px;
+            transition: width 2s ease;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 6rem 0;
+            background: #2c3e50;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .portfolio-image {
+            height: 200px;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
             color: white;
-            padding: 3px 6px;
+            text-align: center;
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #27ae60;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 6rem 0;
+            background: #34495e;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: #27ae60;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 3rem 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            width: calc(50% - 2rem);
+            backdrop-filter: blur(10px);
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: calc(50% + 2rem);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #27ae60;
+            border-radius: 50%;
+            top: 2rem;
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -31px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -31px;
+        }
+
+        .timeline-date {
+            color: #27ae60;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background: #2c3e50;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .contact-info h3 {
+            color: #27ae60;
+            margin-bottom: 2rem;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ecf0f1;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(39, 174, 96, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .skills-categories {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: calc(100% - 40px);
+                left: 40px !important;
+            }
+
+            .timeline-item::before {
+                left: -31px !important;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* About Me Section */
+        .about {
+            padding: 6rem 0;
+            background: #34495e;
+        }
+
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(39, 174, 96, 0.2);
+            text-align: left;
+        }
+
+        .about-subtitle {
+            color: #27ae60;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .highlight-item {
+            padding: 1.5rem;
+            background: rgba(39, 174, 96, 0.1);
             border-radius: 10px;
-            font-size: 0.75em;
-            font-weight: 500;
+            border: 1px solid rgba(39, 174, 96, 0.3);
+            transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
-        .skill-tag.secondary {
-            background: #95a5a6;
+        #languagesBox:hover {
+            transform: translateY(-5px);
+            background: rgba(39, 174, 96, 0.15);
+            cursor: pointer;
         }
 
-        .languages {
-            margin-top: 15px;
+        .highlight-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-text {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design for About Section */
+        @media (max-width: 768px) {
+            .about-content {
+                padding: 2rem;
+            }
+            
+            .about-highlights {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .about-subtitle {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Languages Popup Styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #2c3e50;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 2px solid rgba(39, 174, 96, 0.3);
+            animation: slideIn 0.3s ease;
+        }
+
+        .popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(39, 174, 96, 0.3);
+        }
+
+        .popup-header h3 {
+            color: #27ae60;
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .close-popup {
+            font-size: 2rem;
+            color: #27ae60;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            line-height: 1;
+        }
+
+        .close-popup:hover {
+            color: #2ecc71;
+            transform: scale(1.1);
+        }
+
+        .languages-grid {
+            display: grid;
+            gap: 1.5rem;
         }
 
         .language-item {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 6px;
-            padding: 6px 10px;
-            background: white;
-            border-radius: 4px;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(39, 174, 96, 0.2);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
         }
 
-        .language-name {
-            font-weight: 500;
-            font-size: 0.85em;
+        .language-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .language-flag {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .language-info {
+            flex: 1;
+        }
+
+        .language-info h4 {
+            color: #27ae60;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
         }
 
         .language-level {
-            font-size: 0.8em;
-            color: #3498db;
-            font-weight: 600;
+            color: #ecf0f1;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
-        .education {
-            background: #f8f9fa;
-            padding: 12px;
-            border-radius: 6px;
-            border-left: 3px solid #3498db;
+        .language-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
         }
 
-        .education h3 {
-            color: #2c3e50;
-            margin-bottom: 4px;
-            font-size: 0.95em;
+        .language-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #27ae60, #2ecc71);
+            border-radius: 3px;
+            transition: width 0.8s ease;
         }
 
-        .education .institution {
-            color: #3498db;
-            font-weight: 500;
-            margin-bottom: 4px;
-            font-size: 0.9em;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        .education .date {
-            color: #7f8c8d;
-            font-size: 0.8em;
-            margin-bottom: 8px;
-        }
-
-        .thesis {
-            font-style: italic;
-            color: #555;
-            font-size: 0.8em;
-            margin-bottom: 6px;
-        }
-
-        .subjects {
-            font-size: 0.8em;
-            color: #666;
-        }
-
-        @media print {
-            body { 
-                -webkit-print-color-adjust: exact; 
-                print-color-adjust: exact;
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translate(-50%, -60%);
             }
-            .container { 
-                max-width: none; 
-                margin: 0; 
-                box-shadow: none;
+            to { 
+                opacity: 1;
+                transform: translate(-50%, -50%);
             }
-            .header {
-                page-break-after: avoid;
-                break-after: avoid;
-            }
-            .section {
-                /* Entfernt: page-break-inside: avoid für bessere Aufteilung */
-                break-inside: auto;
-            }
-            .job {
-                /* Beibehalten für einzelne Jobs */
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-            /* Verhindert Seitenumbruch nach Profil-Sektion */
-            .section:first-of-type {
-                page-break-after: avoid;
-                break-after: avoid;
-            }
-            @page {
-                margin: 0.5in;
-                size: A4;
+        }
+
+        /* Mobile responsiveness for popup */
+        @media (max-width: 768px) {
+            .popup-content {
+                width: 95%;
+                padding: 1.5rem;
+                max-height: 85vh;
             }
             
-            .page {
-                box-shadow: none !important;
-                margin: 0;
+            .language-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
             }
-
-            * {
-                -webkit-box-shadow: none !important;
-                box-shadow: none !important;
-                -webkit-text-shadow: none !important;
-                text-shadow: none !important;
+            
+            .language-flag {
+                font-size: 3rem;
             }
         }
+
+            /* Make programming languages box clickable like languages box */
+            #programmingBox:hover {
+                transform: translateY(-5px);
+                background: rgba(39, 174, 96, 0.15);
+                cursor: pointer;
+            }
+
+            /* Additional styling for programming languages popup */
+            .language-item .language-flag {
+                font-size: 2.5rem;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Specific styling for programming language icons */
+            #programmingPopup .language-flag {
+                background: rgba(39, 174, 96, 0.1);
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.8rem;
+            }
+
+            #programmingPopup .language-item:hover .language-flag {
+                background: rgba(39, 174, 96, 0.2);
+                transform: scale(1.1);
+                transition: all 0.3s ease;
+            }
+
+        /* CTA Buttons Container */
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        /* Second button with delay and positioning */
+        .cta-button-outline {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem; /* Translate down */
+            animation: fadeInUp 1s ease 0.6s both; /* Delayed animation */
+        }
+
+        .cta-button-outline:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(39, 174, 96, 0.3);
+        }
+
+        .download-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button-outline:hover .download-icon {
+            transform: scale(1.1);
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .cta-buttons {
+                flex-direction: row;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .cta-button,
+            .cta-button-outline {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .cta-buttons {
+                gap: 0.8rem;
+            }
+        }
+</style>
+        
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">WC</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">HOME</a></li>
+                <li><a href="#about" class="nav-link">ABOUT</a></li>
+                <li><a href="#skills" class="nav-link">SKILLS</a></li>
+                <li><a href="#portfolio" class="nav-link">PORTFOLIO</a></li>
+                <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>ICH BIN<br><span class="highlight">Wissem<br>Charni</span></h1>
+                <p>Junior Software Developer</p>
+                <a href="#portfolio" class="cta-button">MEINE ARBEIT ANSEHEN</a>
+                <a href="pdf/Lebenslauf - Wissem Charni.pdf" class="cta-button cta-button-outline" download="Wissem_Charni_Resume.pdf">
+            <span class="download-icon">📄</span>
+            LEBENSLAUF AlS PDF HERUNTERLADEN
+        </a>
+            </div>
+            <div class="hero-image">
+                <div class="profile-pic">
+                    <img src="assets/image.jpeg" alt="Wissem Charni" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Me Section -->
+<!-- About Me Section -->
+<section id="about" class="about">
     <div class="container">
-        <header class="header">
-            <img src="assets/image.jpeg" alt="Wissem Charni" class="profile-photo">
-            <div class="header-info">
-                <h1>WISSEM CHARNI</h1>
-                <div class="subtitle">Software Developer</div>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span>📧</span>
-                        <span>wissemcherni75@gmail.com</span>
+        <h2 class="section-title">00 ABOUT ME</h2>
+        <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem;">Wer ich bin und was mich antreibt</p>
+        
+        <div class="about-container">
+            <div class="about-content">
+                <h3 class="about-subtitle">Hallo! Ich bin Wissem Charni</h3>
+                <p>Als Junior Software Developer bringe ich eine Leidenschaft für Technologie und Innovation mit. Meine Reise in der Softwareentwicklung begann während meines Studiums und hat sich durch praktische Erfahrungen in verschiedenen Unternehmen stetig weiterentwickelt.</p>
+                
+                <p>Ich spezialisiere mich auf die Entwicklung effizienter und skalierbarer Softwarelösungen, mit besonderem Fokus auf Backend-Entwicklung, Embedded Systems und Automatisierung. Meine Erfahrung reicht von der Arbeit mit modernen Programmiersprachen bis hin zur Optimierung komplexer Algorithmen.</p>
+                
+                <p>Was mich besonders auszeichnet, ist meine Fähigkeit, komplexe technische Herausforderungen zu analysieren und innovative Lösungen zu entwickeln. Ich glaube daran, dass guter Code nicht nur funktional, sondern auch elegant und wartbar sein sollte.</p>
+                
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-number">3+</div>
+                        <div class="highlight-text">Jahre Erfahrung</div>
                     </div>
-                    <div class="contact-item">
-                        <span>📱</span>
-                        <span>+49 173 9106007</span>
+                    <div class="highlight-item" id="languagesBox">
+                        <div class="highlight-number">4</div>
+                        <div class="highlight-text">Sprachen</div>
                     </div>
-                    <div class="contact-item">
-                        <span>📍</span>
-                        <span>Stockstadt am Main, Deutschland</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>🛂</span>
-                        <span>Arbeitserlaubnis Deutschland</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>💼</span>
-                        <a href="https://www.linkedin.com/in/wissem-charni-b464b6115/" class="linkedin-link" target="_blank">LinkedIn Profil</a>
+                        <div class="highlight-item" id="programmingBox">
+                        <div class="highlight-number">5+</div>
+                        <div class="highlight-text">Programmiersprachen</div>
                     </div>
                 </div>
             </div>
-        </header>
-
-        <div class="main-content">
-            <aside class="sidebar">
-                <div class="section">
-                    <h2>Technische Skills</h2>
-                    <div class="skills-grid">
-                            <div class="skill-category">
-                            <h3>Hauptsprachen</h3>
-                            <div class="skill-tags">
-                                <div class="skill-row">
-                                    <span class="skill-tag">Java</span>
-                                    <span class="skill-tag" aria-label="Java 5 von 5">⭐⭐⭐⭐⭐</span>
-                                </div>
-                                <div class="skill-row">
-                                    <span class="skill-tag">C++</span>
-                                    <span class="skill-tag" aria-label="C++ 4 von 5">⭐⭐⭐⭐</span>
-                                </div>
-                                <div class="skill-row">
-                                    <span class="skill-tag">Python</span>
-                                    <span class="skill-tag" aria-label="Python 5 von 5">⭐⭐⭐⭐⭐</span>
-                                </div>
-                                <div class="skill-row">
-                                    <span class="skill-tag">JavaScript</span>
-                                    <span class="skill-tag" aria-label="JavaScript 4 von 5">⭐⭐⭐⭐</span>
-                                </div>
-                                <div class="skill-row">
-                                    <span class="skill-tag">C#</span>
-                                    <span class="skill-tag" aria-label="C# 2 von 5">⭐⭐</span>
-                                </div>
-                            </div>
-                            </div>
-                        <div class="skill-category">
-                            <h3>Backend</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag secondary">Spring</span>
-                                <span class="skill-tag secondary">Django</span>
-                                <span class="skill-tag secondary">Flask</span>
-                                <span class="skill-tag secondary">Node.js</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Datenbanken</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag secondary">PostgreSQL</span>
-                                <span class="skill-tag secondary">MySQL</span>
-                                <span class="skill-tag secondary">MongoDB</span>
-                                <span class="skill-tag secondary">MariaDB</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h3>DevOps & Tools</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag secondary">Docker</span>
-                                <span class="skill-tag secondary">Git</span>
-                                <span class="skill-tag secondary">Jenkins</span>
-                                <span class="skill-tag secondary">Linux</span>
-                                <span class="skill-tag secondary">Github Actions</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section languages">
-                    <h2>Sprachen</h2>
-                    <div class="language-item">
-                        <span class="language-name">Deutsch</span>
-                        <span class="language-level">C1</span>
-                    </div>
-                    <div class="language-item">
-                        <span class="language-name">Englisch</span>
-                        <span class="language-level">C1</span>
-                    </div>
-                    <div class="language-item">
-                        <span class="language-name">Arabisch</span>
-                        <span class="language-level">Muttersprache</span>
-                    </div>
-                    <div class="language-item">
-                        <span class="language-name">Französisch</span>
-                        <span class="language-level">Muttersprache</span>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h2>Ausbildung</h2>
-                    <div class="education">
-                        <h3>Bachelor of Science Informatik</h3>
-                        <div class="institution">Hochschule Darmstadt</div>
-                        <div class="date">2018 - 2023</div>
-                        <div class="thesis"><strong>Abschlussarbeit:</strong> Evaluating QR-PACE On ARM Cortex-M4</div>
-                        <div class="subjects">Software Engineering, Algorithmen, Embedded Systems, KI-Grundlagen</div>
-                    </div>
-                </div>
-            </aside>
-
-            <main class="content">
-                <div class="section">
-                    <h2>Profil</h2>
-                    <p class="profile-text">
-                        Erfahrener Software Developer mit 3+ Jahren Praxis in Full-Stack-Entwicklung. Spezialisiert auf Backend-Entwicklung mit Java, C++ und Python in den Bereichen Telekommunikation und Logistik. Nachgewiesene Erfolge bei der Optimierung von Geschäftsprozessen und der Modernisierung von Legacy-Systemen.
-                    </p>
-                </div>
-
-                <div class="section">
-                    <h2>Berufserfahrung</h2>
-
-                    <div class="job">
-                        <div class="job-header">
-                            <div class="job-title">Software Developer</div>
-                            <div class="company">Erhard Partner Group, Alzenau</div>
-                            <div class="date">April 2024 – Dezember 2024</div>
-                        </div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Entwicklung und Optimierung leistungsstarker C++-Anwendungen für die EPG ONE Supply Chain Suite</li>
-                                <li>Erweiterung und Verbesserung von Funktionalitäten im Warehouse Management System (WMS)</li>
-                                <li>Implementierung neuer Funktionen basierend auf individuellen Kundenanforderungen</li>
-                                <li>Modernisierung von Legacy-Systemen durch Migration von COBOL zu moderner C++-Architektur</li>
-                                <li>Mitarbeit im agilen Entwicklungsteam mit Einsatz von Git und GitLab zur Versionskontrolle</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="job">
-                        <div class="job-header">
-                            <div class="job-title">Embedded Systems Research Intern</div>
-                            <div class="company">Hochschule Darmstadt</div>
-                            <div class="date">April 2023 – November 2023</div>
-                        </div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Forschungsunterstützung bei QR-PACE-Algorithmus auf ARM Cortex-M4</li>
-                                <li>Performance-Optimierung für ressourcenbeschränkte Embedded Systems</li>
-                                <li>Kryptographische Implementierungen: Effizienz- und Ressourcenanalyse</li>
-                                <li>Debugging und Profiling mit GDB für Mikrocontroller</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="job">
-                        <div class="job-header">
-                            <div class="job-title">Software Developer Trainee</div>
-                            <div class="company">Deutsche Telekom, Hannover</div>
-                            <div class="date">August 2021 – März 2023</div>
-                        </div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Entwicklung von Python-Skripten für Netzwerk-Automatisierung</li>
-                                <li><strong>Ergebnis:</strong> Systemeffizienz um 15% gesteigert</li>
-                                <li>Zusammenarbeit mit Senior Developers bei Solution-Integration</li>
-                                <li>Professionelle Entwicklung mit Git und Eclipse</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="job">
-                        <div class="job-header">
-                            <div class="job-title">Übungsleiter Programmierung</div>
-                            <div class="company">Hochschule Darmstadt</div>
-                            <div class="date">Februar 2019 – August 2019</div>
-                        </div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Unterricht für 30+ Studierende in C++ Programmierung</li>
-                                <li>Vermittlung von Algorithmen und Datenstrukturen</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h2>Persönliche Stärken</h2>
-                    <div class="job-description">
-                        <ul>
-                            <li>Analytisches Problemlösen und strukturiertes Arbeiten</li>
-                            <li>Teamfähigkeit und agile Arbeitsweise (Scrum)</li>
-                            <li>Hohe Lernbereitschaft für neue Technologien</li>
-                            <li>Kundenorientierte Kommunikation</li>
-                            <li>Selbstständige Projektbearbeitung</li>
-                        </ul>
-                    </div>
-                </div>
-            </main>
         </div>
     </div>
+</section>
+
+<!-- Languages Popup -->
+<div id="languagesPopup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="popup-header">
+            <h3>Meine Sprachen</h3>
+            <span class="close-popup">&times;</span>
+        </div>
+        <div class="languages-grid">
+            <div class="language-item">
+                <div class="language-flag">🇹🇳</div>
+                <div class="language-info">
+                    <h4>العربية (Arabisch)</h4>
+                    <div class="language-level">Muttersprache</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">🇫🇷</div>
+                <div class="language-info">
+                    <h4>Français (Französisch)</h4>
+                    <div class="language-level">Muttersprache</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">🇩🇪</div>
+                <div class="language-info">
+                    <h4>Deutsch</h4>
+                    <div class="language-level">C1 Niveau</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">🇬🇧</div>
+                <div class="language-info">
+                    <h4>English</h4>
+                    <div class="language-level">C1 Niveau</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="programmingPopup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="popup-header">
+            <h3>Meine Programmiersprachen</h3>
+            <span class="close-popup" id="closeProgrammingPopup">&times;</span>
+        </div>
+        <div class="languages-grid">
+            <div class="language-item">
+                <div class="language-flag">🐍</div>
+                <div class="language-info">
+                    <h4>Python</h4>
+                    <div class="language-level">Fortgeschritten - Backend, Automatisierung, Data Science</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">☕</div>
+                <div class="language-info">
+                    <h4>Java</h4>
+                    <div class="language-level">Fortgeschritten - OOP, Backend Development</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">⚡</div>
+                <div class="language-info">
+                    <h4>C++</h4>
+                    <div class="language-level">Fortgeschritten - System Programming, Embedded</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">🌐</div>
+                <div class="language-info">
+                    <h4>JavaScript</h4>
+                    <div class="language-level">Mittelstufe - Web Development, Frontend</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">💻</div>
+                <div class="language-info">
+                    <h4>C#</h4>
+                    <div class="language-level">Grundlagen - .NET Development</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 40%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">01 PROFESSIONAL</h2>
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem;">Meine Technische Skills</p>
+            
+            <div class="skills-categories">
+                <!-- Programming Languages -->
+                <div class="skill-category">
+                    <h3 class="category-title">Programmiersprachen</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Python</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Java</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>C++</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>C#</span>
+                            <span>40%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="skill-category">
+                    <h3 class="category-title">Web Development</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>HTML & CSS</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>JavaScript</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-category">
+                    <h3 class="category-title">Datenbanken</h3>  
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>MySQL</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>PostgreSQL</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>MongoDB</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DevOps & Tools -->
+                <div class="skill-category">
+                    <h3 class="category-title">DevOps & Tools</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Git</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Docker</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>GitHub Actions</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Linux</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">02 PORTFOLIO</h2>
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem;">MEINE NEUESTEN ARBEITEN. <a href="#" style="color: #27ae60;">MEHR SEHEN ></a></p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        QR-PACE
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Quantum-resistant Password-Authenticated Connection Establishment</h3>
+                        <p>Bachelor-Abschlussarbeit: Evaluierung und Optimierung des QR-PACE-Algorithmus für ARM Cortex-M4 Mikrocontroller mit 15% Effizienzsteigerung.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        WMS
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Warehouse Management System</h3>
+                        <p>Entwicklung und Erweiterung von Funktionalitäten im WMS der EPG ONE Supply Chain Suite mit C++. Technische Umsetzung individueller Kundenanforderungen in Form neuer Features.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        Automatisierung <br> & <br>Testen
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Netzwerk-Automatisierung & Test-Automatisierung</h3>
+                        <p>Python-Skripte für Netzwerk-Automatisierung bei Deutsche Telekom mit 15% Systemeffizienz-Steigerung.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">03 EXPERIENCE</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">April 2024 – Dezember 2024</div>
+                    <div class="timeline-title">Software Developer</div>
+                    <div class="timeline-company">Erhard Partner Group, Alzenau</div>
+                    <p>Entwicklung und Optimierung leistungsstarker C++ Anwendungen für die EPG ONE Supply Chain Suite</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">April 2023 – November 2023</div>
+                    <div class="timeline-title">Embedded Systems Research Intern</div>
+                    <div class="timeline-company">Hochschule Darmstadt</div>
+                    <p>Forschungsunterstützung bei QR-PACE-Algorithmus auf ARMCortex-M4</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">August 2021 – März 2023</div>
+                    <div class="timeline-title">Software Developer Trainee</div>
+                    <div class="timeline-company">Deutsche Telekom, Hannover</div>
+                    <p>Entwicklung von Python-Skripten für Netzwerk-Automatisierung</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Februar 2019 – August 2019</div>
+                    <div class="timeline-title">Übungsleiter Programmierung</div>
+                    <div class="timeline-company">Hochschule Darmstadt</div>
+                    <p>Übungen betreuen und Hausaufgaben kontrollieren und korrigieren</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">CONTACT</h2>
+                <p style="margin-bottom: 2rem;">Haben Sie ein Projekt im Kopf? Lassen Sie uns darüber sprechen und gemeinsam etwas Großartiges schaffen.</p>
+                <p><strong>Email:</strong> wissemcherni75@gmail.com</p>
+                <p><strong>Tel:</strong> +49-173-910-6007</p>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="form-group">
+                            <label>Vorname *</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Nachname *</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon</label>
+                        <input type="tel">
+                    </div>
+                    <div class="form-group">
+                        <label>Nachricht</label>
+                        <textarea rows="5" placeholder="Ihre Nachricht..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">SENDEN</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                
+                // Update active link
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(44, 62, 80, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(44, 62, 80, 0.95)';
+            }
+        });
+
+        // Animate skill bars on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-progress');
+                    skillBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 200);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(document.querySelector('.skills'));
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Vielen Dank für Ihre Nachricht! Ich werde mich bald bei Ihnen melden.');
+            this.reset();
+        });
+
+        // Add scroll animations to timeline items
+        const timelineObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'all 0.6s ease';
+            timelineObserver.observe(item);
+        });
+
+        // Portfolio items hover effect
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Skill category animations
+        document.querySelectorAll('.skill-category').forEach((category, index) => {
+            category.style.opacity = '0';
+            category.style.transform = 'translateY(30px)';
+            category.style.transition = 'all 0.6s ease';
+            category.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        const categoryObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.skill-category').forEach(category => {
+            categoryObserver.observe(category);
+        });
+
+                // Languages Popup Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const languagesBox = document.getElementById('languagesBox');
+            const popup = document.getElementById('languagesPopup');
+            const closeBtn = document.querySelector('.close-popup');
+
+            // Open popup when languages box is clicked
+            languagesBox.addEventListener('click', function() {
+                popup.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                
+                // Animate progress bars
+                setTimeout(() => {
+                    const progressBars = popup.querySelectorAll('.language-progress');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                }, 200);
+            });
+
+            // Close popup when X is clicked
+            closeBtn.addEventListener('click', function() {
+                popup.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable background scrolling
+            });
+
+            // Close popup when clicking outside of it
+            popup.addEventListener('click', function(e) {
+                if (e.target === popup) {
+                    popup.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Close popup with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && popup.style.display === 'block') {
+                    popup.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+        // Existing languages popup code...
+        
+        // Programming Languages Popup Functionality
+        const programmingBox = document.getElementById('programmingBox');
+        const programmingPopup = document.getElementById('programmingPopup');
+        const closeProgrammingBtn = document.getElementById('closeProgrammingPopup');
+
+        // Open programming popup when box is clicked
+        programmingBox.addEventListener('click', function() {
+            programmingPopup.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            // Animate progress bars
+            setTimeout(() => {
+                const progressBars = programmingPopup.querySelectorAll('.language-progress');
+                progressBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                });
+            }, 200);
+        });
+
+        // Close programming popup when X is clicked
+        closeProgrammingBtn.addEventListener('click', function() {
+            programmingPopup.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close programming popup when clicking outside
+        programmingPopup.addEventListener('click', function(e) {
+            if (e.target === programmingPopup) {
+                programmingPopup.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close programming popup with Escape key (modify existing escape handler)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                if (programmingPopup.style.display === 'block') {
+                    programmingPopup.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+                if (document.getElementById('languagesPopup').style.display === 'block') {
+                    document.getElementById('languagesPopup').style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+    });
+
+    </script>
 </body>
 </html>
