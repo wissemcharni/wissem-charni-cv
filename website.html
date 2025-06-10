@@ -732,6 +732,97 @@
                 font-size: 3rem;
             }
         }
+
+            /* Make programming languages box clickable like languages box */
+            #programmingBox:hover {
+                transform: translateY(-5px);
+                background: rgba(39, 174, 96, 0.15);
+                cursor: pointer;
+            }
+
+            /* Additional styling for programming languages popup */
+            .language-item .language-flag {
+                font-size: 2.5rem;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Specific styling for programming language icons */
+            #programmingPopup .language-flag {
+                background: rgba(39, 174, 96, 0.1);
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.8rem;
+            }
+
+            #programmingPopup .language-item:hover .language-flag {
+                background: rgba(39, 174, 96, 0.2);
+                transform: scale(1.1);
+                transition: all 0.3s ease;
+            }
+
+        /* CTA Buttons Container */
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        /* Second button with delay and positioning */
+        .cta-button-outline {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem; /* Translate down */
+            animation: fadeInUp 1s ease 0.6s both; /* Delayed animation */
+        }
+
+        .cta-button-outline:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(39, 174, 96, 0.3);
+        }
+
+        .download-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button-outline:hover .download-icon {
+            transform: scale(1.1);
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .cta-buttons {
+                flex-direction: row;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .cta-button,
+            .cta-button-outline {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .cta-buttons {
+                gap: 0.8rem;
+            }
+        }
+</style>
+        
     </style>
 </head>
 <body>
@@ -757,6 +848,10 @@
                 <h1>ICH BIN<br><span class="highlight">Wissem<br>Charni</span></h1>
                 <p>Junior Software Developer</p>
                 <a href="#portfolio" class="cta-button">MEINE ARBEIT ANSEHEN</a>
+                <a href="pdf/Lebenslauf - Wissem Charni.pdf" class="cta-button cta-button-outline" download="Wissem_Charni_Resume.pdf">
+            <span class="download-icon">📄</span>
+            LEBENSLAUF AlS PDF HERUNTERLADEN
+        </a>
             </div>
             <div class="hero-image">
                 <div class="profile-pic">
@@ -790,7 +885,7 @@
                         <div class="highlight-number">4</div>
                         <div class="highlight-text">Sprachen</div>
                     </div>
-                    <div class="highlight-item">
+                        <div class="highlight-item" id="programmingBox">
                         <div class="highlight-number">5+</div>
                         <div class="highlight-text">Programmiersprachen</div>
                     </div>
@@ -845,6 +940,66 @@
                     <div class="language-level">C1 Niveau</div>
                     <div class="language-bar">
                         <div class="language-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="programmingPopup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="popup-header">
+            <h3>Meine Programmiersprachen</h3>
+            <span class="close-popup" id="closeProgrammingPopup">&times;</span>
+        </div>
+        <div class="languages-grid">
+            <div class="language-item">
+                <div class="language-flag">🐍</div>
+                <div class="language-info">
+                    <h4>Python</h4>
+                    <div class="language-level">Fortgeschritten - Backend, Automatisierung, Data Science</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">☕</div>
+                <div class="language-info">
+                    <h4>Java</h4>
+                    <div class="language-level">Fortgeschritten - OOP, Backend Development</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">⚡</div>
+                <div class="language-info">
+                    <h4>C++</h4>
+                    <div class="language-level">Fortgeschritten - System Programming, Embedded</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">🌐</div>
+                <div class="language-info">
+                    <h4>JavaScript</h4>
+                    <div class="language-level">Mittelstufe - Web Development, Frontend</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="language-item">
+                <div class="language-flag">💻</div>
+                <div class="language-info">
+                    <h4>C#</h4>
+                    <div class="language-level">Grundlagen - .NET Development</div>
+                    <div class="language-bar">
+                        <div class="language-progress" style="width: 40%"></div>
                     </div>
                 </div>
             </div>
@@ -1263,6 +1418,61 @@
                 }
             });
         });
+        document.addEventListener('DOMContentLoaded', function() {
+        // Existing languages popup code...
+        
+        // Programming Languages Popup Functionality
+        const programmingBox = document.getElementById('programmingBox');
+        const programmingPopup = document.getElementById('programmingPopup');
+        const closeProgrammingBtn = document.getElementById('closeProgrammingPopup');
+
+        // Open programming popup when box is clicked
+        programmingBox.addEventListener('click', function() {
+            programmingPopup.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            // Animate progress bars
+            setTimeout(() => {
+                const progressBars = programmingPopup.querySelectorAll('.language-progress');
+                progressBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                });
+            }, 200);
+        });
+
+        // Close programming popup when X is clicked
+        closeProgrammingBtn.addEventListener('click', function() {
+            programmingPopup.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close programming popup when clicking outside
+        programmingPopup.addEventListener('click', function(e) {
+            if (e.target === programmingPopup) {
+                programmingPopup.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close programming popup with Escape key (modify existing escape handler)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                if (programmingPopup.style.display === 'block') {
+                    programmingPopup.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+                if (document.getElementById('languagesPopup').style.display === 'block') {
+                    document.getElementById('languagesPopup').style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+    });
+
     </script>
 </body>
 </html>
