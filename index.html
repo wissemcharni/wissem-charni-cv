@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,7 +60,8 @@
             cursor: pointer;
         }
 
-        .nav-link:hover, .nav-link.active {
+        .nav-link:hover,
+        .nav-link.active {
             color: #27ae60;
         }
 
@@ -617,6 +619,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -628,6 +631,7 @@
                 opacity: 0;
                 transform: translateX(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -635,16 +639,22 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideIn {
-            from { 
+            from {
                 opacity: 0;
                 transform: translate(-50%, -60%);
             }
-            to { 
+
+            to {
                 opacity: 1;
                 transform: translate(-50%, -50%);
             }
@@ -701,7 +711,8 @@
             cursor: pointer;
         }
 
-        #languagesBox:hover, #programmingBox:hover {
+        #languagesBox:hover,
+        #programmingBox:hover {
             transform: translateY(-5px);
             background: rgba(39, 174, 96, 0.15);
             cursor: pointer;
@@ -925,28 +936,29 @@
             .about-content {
                 padding: 2rem;
             }
-            
+
             .about-highlights {
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
-            
+
             .about-subtitle {
                 font-size: 1.5rem;
             }
 
-            .popup-content, .portfolio-popup-content {
+            .popup-content,
+            .portfolio-popup-content {
                 width: 95%;
                 padding: 1.5rem;
                 max-height: 85vh;
             }
-            
+
             .language-item {
                 flex-direction: column;
                 text-align: center;
                 gap: 1rem;
             }
-            
+
             .language-flag {
                 font-size: 3rem;
             }
@@ -956,7 +968,7 @@
                 padding: 0.8rem 1.5rem;
                 font-size: 0.9rem;
             }
-            
+
             .cta-buttons {
                 gap: 0.8rem;
             }
@@ -986,6 +998,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -1010,7 +1023,8 @@
                 <p>Junior Software Developer</p>
                 <div class="cta-buttons">
                     <a href="#portfolio" class="cta-button">MEINE ARBEIT ANSEHEN</a>
-                    <a href="pdf/Lebenslauf - Wissem Charni.pdf" class="cta-button cta-button-outline" download="Wissem_Charni_Resume.pdf">
+                    <a href="pdf/Lebenslauf - Wissem Charni.pdf" class="cta-button cta-button-outline"
+                        download="Wissem_Charni_Resume.pdf">
                         <span class="download-icon">📄</span>
                         LEBENSLAUF AlS PDF HERUNTERLADEN
                     </a>
@@ -1029,16 +1043,23 @@
         <div class="container">
             <h2 class="section-title">00 ABOUT ME</h2>
             <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem;">Wer ich bin und was mich antreibt</p>
-            
+
             <div class="about-container">
                 <div class="about-content">
                     <h3 class="about-subtitle">Hallo! Ich bin Wissem Charni</h3>
-                    <p>Als Junior Software Developer bringe ich eine Leidenschaft für Technologie und Innovation mit. Meine Reise in der Softwareentwicklung begann während meines Studiums und hat sich durch praktische Erfahrungen in verschiedenen Unternehmen stetig weiterentwickelt.</p>
-                    
-                    <p>Ich spezialisiere mich auf die Entwicklung effizienter und skalierbarer Softwarelösungen, mit besonderem Fokus auf Backend-Entwicklung, Embedded Systems und Automatisierung. Meine Erfahrung reicht von der Arbeit mit modernen Programmiersprachen bis hin zur Optimierung komplexer Algorithmen.</p>
-                    
-                    <p>Was mich besonders auszeichnet, ist meine Fähigkeit, komplexe technische Herausforderungen zu analysieren und innovative Lösungen zu entwickeln. Ich glaube daran, dass guter Code nicht nur funktional, sondern auch elegant und wartbar sein sollte.</p>
-                    
+                    <p>Als Junior Software Developer bringe ich eine Leidenschaft für Technologie und Innovation mit.
+                        Meine Reise in der Softwareentwicklung begann während meines Studiums und hat sich durch
+                        praktische Erfahrungen in verschiedenen Unternehmen stetig weiterentwickelt.</p>
+
+                    <p>Ich spezialisiere mich auf die Entwicklung effizienter und skalierbarer Softwarelösungen, mit
+                        besonderem Fokus auf Backend-Entwicklung, Embedded Systems und Automatisierung. Meine Erfahrung
+                        reicht von der Arbeit mit modernen Programmiersprachen bis hin zur Optimierung komplexer
+                        Algorithmen.</p>
+
+                    <p>Was mich besonders auszeichnet, ist meine Fähigkeit, komplexe technische Herausforderungen zu
+                        analysieren und innovative Lösungen zu entwickeln. Ich glaube daran, dass guter Code nicht nur
+                        funktional, sondern auch elegant und wartbar sein sollte.</p>
+
                     <div class="about-highlights">
                         <div class="highlight-item">
                             <div class="highlight-number">3+</div>
@@ -1177,7 +1198,7 @@
         <div class="container">
             <h2 class="section-title">01 PROFESSIONAL</h2>
             <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem;">Meine Technische Skills</p>
-            
+
             <div class="skills-categories">
                 <!-- Programming Languages -->
                 <div class="skill-category">
@@ -1245,7 +1266,7 @@
 
                 <!-- Databases -->
                 <div class="skill-category">
-                    <h3 class="category-title">Datenbanken</h3>  
+                    <h3 class="category-title">Datenbanken</h3>
                     <div class="skill-item">
                         <div class="skill-name">
                             <span>MySQL</span>
@@ -1323,15 +1344,18 @@
     <section id="portfolio" class="portfolio">
         <div class="container">
             <h2 class="section-title">02 PORTFOLIO</h2>
-            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem;">MEINE NEUESTEN ARBEITEN. <a href="#" style="color: #27ae60;">MEHR SEHEN ></a></p>
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem;">MEINE NEUESTEN ARBEITEN. <a href="#"
+                    style="color: #27ae60;">MEHR SEHEN ></a></p>
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-project="qr-pace">
                     <div class="portfolio-image">
                         QR-PACE
                     </div>
                     <div class="portfolio-content">
-                        <h3 class="portfolio-title">Quantum-resistant Password-Authenticated Connection Establishment</h3>
-                        <p>Bachelor-Abschlussarbeit: Evaluierung und Optimierung des QR-PACE-Algorithmus für ARM Cortex-M4 Mikrocontroller mit 15% Effizienzsteigerung.</p>
+                        <h3 class="portfolio-title">Quantum-resistant Password-Authenticated Connection Establishment
+                        </h3>
+                        <p>Bachelor-Abschlussarbeit: Evaluierung und Optimierung des QR-PACE-Algorithmus für ARM
+                            Cortex-M4 Mikrocontroller mit 15% Effizienzsteigerung.</p>
                     </div>
                 </div>
                 <div class="portfolio-item" data-project="wms">
@@ -1340,7 +1364,8 @@
                     </div>
                     <div class="portfolio-content">
                         <h3 class="portfolio-title">Warehouse Management System</h3>
-                        <p>Entwicklung und Erweiterung von Funktionalitäten im WMS der EPG ONE Supply Chain Suite mit C++. Technische Umsetzung individueller Kundenanforderungen in Form neuer Features.</p>
+                        <p>Entwicklung und Erweiterung von Funktionalitäten im WMS der EPG ONE Supply Chain Suite mit
+                            C++. Technische Umsetzung individueller Kundenanforderungen in Form neuer Features.</p>
                     </div>
                 </div>
                 <div class="portfolio-item" data-project="automation">
@@ -1349,16 +1374,18 @@
                     </div>
                     <div class="portfolio-content">
                         <h3 class="portfolio-title">Netzwerk-Automatisierung & Test-Automatisierung</h3>
-                        <p>Python-Skripte für Netzwerk-Automatisierung bei Deutsche Telekom mit 15% Systemeffizienz-Steigerung.</p>
+                        <p>Python-Skripte für Netzwerk-Automatisierung bei Deutsche Telekom mit 15%
+                            Systemeffizienz-Steigerung.</p>
                     </div>
                 </div>
-                <div class="portfolio-item" data-project="ecommerce">
+                <div class="portfolio-item" data-project="resistor-test">
                     <div class="portfolio-image">
-                        E-Commerce <br> Platform
+                        Resistor Network <br> Test Application
                     </div>
                     <div class="portfolio-content">
-                        <h3 class="portfolio-title">Full-Stack E-Commerce Platform</h3>
-                        <p>Moderne E-Commerce-Lösung mit React Frontend und Node.js Backend. Implementierung von Zahlungssystemen, Bestandsverwaltung und Benutzerauthentifizierung.</p>
+                        <h3 class="portfolio-title">Widerstandsnetzwerk-Prüfanwendung</h3>
+                        <p>GUI-Anwendung in WPF und C# zur automatisierten Prüfung eines Widerstandsnetzwerks. Steuerung
+                            von DC-Spannungsquelle und Digitalmultimeter mit Echtzeit-Messergebnissen.</p>
                     </div>
                 </div>
                 <div class="portfolio-item" data-project="iot">
@@ -1367,7 +1394,8 @@
                     </div>
                     <div class="portfolio-content">
                         <h3 class="portfolio-title">IoT Sensor Monitoring Dashboard</h3>
-                        <p>Real-time Dashboard zur Überwachung von IoT-Sensoren mit Python Flask Backend und React Frontend. Integration von MQTT-Protokoll für Echtzeit-Datenübertragung.</p>
+                        <p>Real-time Dashboard zur Überwachung von IoT-Sensoren mit Python Flask Backend und React
+                            Frontend. Integration von MQTT-Protokoll für Echtzeit-Datenübertragung.</p>
                     </div>
                 </div>
                 <div class="portfolio-item" data-project="Medicare">
@@ -1376,7 +1404,10 @@
                     </div>
                     <div class="portfolio-content">
                         <h3 class="portfolio-title">SaaS-Plattform für Ärzte- und Praxisverwaltung</h3>
-                        <p>Entwicklung einer modernen Webanwendung zur Verwaltung von Patienten, Terminen und medizinischen Dateien für Ärzte und Praxen. Das System bietet rollenbasierten Zugriff (Arzt & Assistent), flexible Preispläne und eine intuitive, responsive Benutzeroberfläche.</p>
+                        <p>Entwicklung einer modernen Webanwendung zur Verwaltung von Patienten, Terminen und
+                            medizinischen Dateien für Ärzte und Praxen. Das System bietet rollenbasierten Zugriff
+                            (Arzt
+                            & Assistent), flexible Preispläne und eine intuitive, responsive Benutzeroberfläche.</p>
                     </div>
                 </div>
             </div>
@@ -1389,13 +1420,17 @@
         <div class="portfolio-popup-content">
             <div class="portfolio-popup-header">
                 <h2 class="portfolio-popup-title">QR-PACE</h2>
-                <p class="portfolio-popup-subtitle">Quantum-resistant Password-Authenticated Connection Establishment</p>
+                <p class="portfolio-popup-subtitle">Quantum-resistant Password-Authenticated Connection Establishment
+                </p>
                 <span class="portfolio-popup-close" data-popup="qr-pace-popup">&times;</span>
             </div>
             <div class="portfolio-popup-body">
                 <div class="popup-section">
                     <h3>🎯 Projektübersicht</h3>
-                    <p>Im Rahmen meiner Bachelor-Abschlussarbeit habe ich den QR-PACE-Algorithmus (Quantum-resistant Password-Authenticated Connection Establishment) für ARM Cortex-M4 Mikrocontroller evaluiert und optimiert. Dieses Projekt zielte darauf ab, quantenresistente Sicherheitslösungen für ressourcenbeschränkte Embedded Systems zu entwickeln.</p>
+                    <p>Im Rahmen meiner Bachelor-Abschlussarbeit habe ich den QR-PACE-Algorithmus (Quantum-resistant
+                        Password-Authenticated Connection Establishment) für ARM Cortex-M4 Mikrocontroller evaluiert und
+                        optimiert. Dieses Projekt zielte darauf ab, quantenresistente Sicherheitslösungen für
+                        ressourcenbeschränkte Embedded Systems zu entwickeln.</p>
                 </div>
 
                 <div class="popup-section">
@@ -1442,7 +1477,10 @@
 
                 <div class="popup-section">
                     <h3>💡 Herausforderungen & Lösungen</h3>
-                    <p>Die größte Herausforderung lag in der Balance zwischen Sicherheit und Performance auf ressourcenbeschränkten Systemen. Durch gezielte Optimierungen auf Assembly-Ebene und intelligente Speicherverwaltung konnte ich die Effizienz erheblich steigern, ohne die kryptographische Sicherheit zu beeinträchtigen.</p>
+                    <p>Die größte Herausforderung lag in der Balance zwischen Sicherheit und Performance auf
+                        ressourcenbeschränkten Systemen. Durch gezielte Optimierungen auf Assembly-Ebene und
+                        intelligente Speicherverwaltung konnte ich die Effizienz erheblich steigern, ohne die
+                        kryptographische Sicherheit zu beeinträchtigen.</p>
                 </div>
             </div>
         </div>
@@ -1459,7 +1497,10 @@
             <div class="portfolio-popup-body">
                 <div class="popup-section">
                     <h3>🎯 Projektübersicht</h3>
-                    <p>Bei der Erhard Partner Group entwickelte ich kritische Funktionalitäten für das Warehouse Management System (WMS) der EPG ONE Supply Chain Suite. Das Projekt umfasste die Implementierung neuer Features und die Optimierung bestehender Module zur Verbesserung der Lagerverwaltungseffizienz.</p>
+                    <p>Bei der Erhard Partner Group entwickelte ich kritische Funktionalitäten für das Warehouse
+                        Management System (WMS) der EPG ONE Supply Chain Suite. Das Projekt umfasste die Implementierung
+                        neuer Features und die Optimierung bestehender Module zur Verbesserung der
+                        Lagerverwaltungseffizienz.</p>
                 </div>
 
                 <div class="popup-section">
@@ -1507,7 +1548,10 @@
 
                 <div class="popup-section">
                     <h3>💡 Herausforderungen & Lösungen</h3>
-                    <p>Die Herausforderung lag in der Integration neuer Features ohne Unterbrechung der laufenden Produktionssysteme. Durch modulare Entwicklung und umfassende Tests konnte ich seamless Updates gewährleisten. Die enge Zusammenarbeit mit den Kunden ermöglichte es, maßgeschneiderte Lösungen zu entwickeln, die deren spezifische Arbeitsabläufe optimierten.</p>
+                    <p>Die Herausforderung lag in der Integration neuer Features ohne Unterbrechung der laufenden
+                        Produktionssysteme. Durch modulare Entwicklung und umfassende Tests konnte ich seamless Updates
+                        gewährleisten. Die enge Zusammenarbeit mit den Kunden ermöglichte es, maßgeschneiderte Lösungen
+                        zu entwickeln, die deren spezifische Arbeitsabläufe optimierten.</p>
                 </div>
             </div>
         </div>
@@ -1524,7 +1568,9 @@
             <div class="portfolio-popup-body">
                 <div class="popup-section">
                     <h3>🎯 Projektübersicht</h3>
-                    <p>Bei der Deutsche Telekom entwickelte ich Python-basierte Automatisierungslösungen für Netzwerk-Management und Test-Automatisierung. Das Projekt zielte darauf ab, manuelle Prozesse zu eliminieren und die Systemeffizienz zu steigern.</p>
+                    <p>Bei der Deutsche Telekom entwickelte ich Python-basierte Automatisierungslösungen für
+                        Netzwerk-Management und Test-Automatisierung. Das Projekt zielte darauf ab, manuelle Prozesse zu
+                        eliminieren und die Systemeffizienz zu steigern.</p>
                 </div>
 
                 <div class="popup-section">
@@ -1573,24 +1619,31 @@
 
                 <div class="popup-section">
                     <h3>💡 Herausforderungen & Lösungen</h3>
-                    <p>Die größte Herausforderung war die Integration der Automatisierungslösungen in die bestehende Netzwerk-Infrastruktur ohne Serviceunterbrechungen. Durch schrittweise Implementierung und umfassende Fallback-Mechanismen konnte ich eine nahtlose Integration gewährleisten. Die Entwicklung robuster Error-Handling-Mechanismen sorgte für zuverlässige Automatisierungsprozesse.</p>
+                    <p>Die größte Herausforderung war die Integration der Automatisierungslösungen in die bestehende
+                        Netzwerk-Infrastruktur ohne Serviceunterbrechungen. Durch schrittweise Implementierung und
+                        umfassende Fallback-Mechanismen konnte ich eine nahtlose Integration gewährleisten. Die
+                        Entwicklung robuster Error-Handling-Mechanismen sorgte für zuverlässige
+                        Automatisierungsprozesse.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- E-Commerce Project Popup -->
-    <div id="ecommerce-popup" class="portfolio-popup-overlay">
+    <!-- Resistor Network Test Application Popup -->
+    <div id="resistor-test-popup" class="portfolio-popup-overlay">
         <div class="portfolio-popup-content">
             <div class="portfolio-popup-header">
-                <h2 class="portfolio-popup-title">E-Commerce Platform</h2>
-                <p class="portfolio-popup-subtitle">Full-Stack Web Development</p>
-                <span class="portfolio-popup-close" data-popup="ecommerce-popup">&times;</span>
+                <h2 class="portfolio-popup-title">Resistor Network Test Application</h2>
+                <p class="portfolio-popup-subtitle">GUI Development for Hardware Testing</p>
+                <span class="portfolio-popup-close" data-popup="resistor-test-popup">×</span>
             </div>
             <div class="portfolio-popup-body">
                 <div class="popup-section">
                     <h3>🎯 Projektübersicht</h3>
-                    <p>Entwicklung einer vollständigen E-Commerce-Plattform als persönliches Projekt zur Demonstration von Full-Stack-Entwicklungsfähigkeiten. Die Anwendung umfasst alle wesentlichen E-Commerce-Funktionen von der Produktverwaltung bis zum Checkout-Prozess.</p>
+                    <p>Entwicklung einer GUI-Anwendung zur Simulation und Durchführung von Funktionsprüfungen eines
+                        Widerstandsnetzwerks. Die Anwendung steuert eine DC-Spannungsquelle und ein Digitalmultimeter,
+                        um Spannungsmessungen an einem analogen Eingangssignal für alle Kombinationen von
+                        Eingangssignalen (24V_F1, 24V_F2, 24V_F3) durchzuführen und die Ergebnisse zu analysieren.</p>
                 </div>
 
                 <div class="popup-section">
@@ -1598,235 +1651,259 @@
                     <div class="project-details">
                         <div class="detail-item">
                             <div class="detail-label">Frontend</div>
-                            <div class="detail-value">React.js</div>
+                            <div class="detail-value">WPF</div>
                         </div>
                         <div class="detail-item">
                             <div class="detail-label">Backend</div>
-                            <div class="detail-value">Node.js & Express</div>
+                            <div class="detail-value">C#</div>
                         </div>
                         <div class="detail-item">
-                            <div class="detail-label">Datenbank</div>
-                            <div class="detail-value">MongoDB</div>
+                            <div class="detail-label">Hardware</div>
+                            <div class="detail-value">TTi PLH120-9, Keysight 34465A</div>
                         </div>
-                        <div class="detail-item">
-                            <div class="detail-label">Entwicklungszeit</div>
-                            <div class="detail-value">4 Monate</div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">WPF</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">XAML</span>
+                            <span class="tech-tag">MVVM</span>
+                            <span class="tech-tag">SCPI</span>
+                            <span class="tech-tag">Multithreading</span>
                         </div>
                     </div>
-                    <div class="tech-stack">
-                        <span class="tech-tag">React.js</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Express.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Stripe API</span>
-                        <span class="tech-tag">JWT Authentication</span>
-                        <span class="tech-tag">Redux</span>
-                        <span class="tech-tag">Material-UI</span>
+                    <div class="popup-section">
+                        <h3>📈 Wichtige Errungenschaften</h3>
+                        <ul class="achievements-list">
+                            <li>Implementierung einer benutzerfreundlichen GUI mit Start- und Abbruch-Button</li>
+                            <li>Automatisierung der Prüfroutine für alle 8 Kombinationen der Eingangssignale (24V_F1,
+                                24V_F2, 24V_F3)</li>
+                            <li>Berechnung der erwarteten Spannung basierend auf Spannungsteilerprinzipien</li>
+                            <li>Vergleich gemessener Spannungen mit Toleranzgrenzen (±%)</li>
+                            <li>Anzeige der Messergebnisse in Echtzeit im GUI-Ausgabefeld</li>
+                            <li>Unterbrechbare Prüfabläufe durch asynchrone Programmierung</li>
+                            <li>Strukturierte Testkonfiguration mittels Lookup-Table für Signalparameter</li>
+                        </ul>
                     </div>
-                </div>
 
-                <div class="popup-section">
-                    <h3>📈 Wichtige Errungenschaften</h3>
-                    <ul class="achievements-list">
-                        <li>Vollständige Benutzerauthentifizierung mit JWT und bcrypt</li>
-                        <li>Integration von Stripe Payment Gateway für sichere Zahlungsabwicklung</li>
-                        <li>Responsive Design für optimale mobile Benutzererfahrung</li>
-                        <li>Implementierung von Warenkorb und Wunschliste-Funktionalität</li>
-                        <li>Admin-Dashboard für Produkt- und Bestellverwaltung</li>
-                        <li>Suchfunktion mit Filtern und Kategorisierung</li>
-                        <li>Bewertungs- und Kommentarsystem für Produkte</li>
-                    </ul>
-                </div>
-
-                <div class="popup-section">
-                    <h3>💡 Herausforderungen & Lösungen</h3>
-                    <p>Die Integration verschiedener APIs und die Gewährleistung der Datensicherheit stellten die größten Herausforderungen dar. Durch die Implementierung einer robusten Authentifizierungsarchitektur und umfassende Input-Validierung konnte ich eine sichere und skalierbare Lösung schaffen. Die Optimierung der Ladezeiten durch Lazy Loading und Code-Splitting verbesserte die Benutzererfahrung erheblich.</p>
+                    <div class="popup-section">
+                        <h3>💡 Herausforderungen & Lösungen</h3>
+                        <p>Die größte Herausforderung war die präzise Steuerung der Hardware (DC-Spannungsquelle und
+                            Digitalmultimeter) und die Gewährleistung eines unterbrechbaren Prüfablaufs. Durch die
+                            Verwendung des MVVM-Musters und asynchroner Programmierung in C# konnte eine reaktionsfähige
+                            und robuste Anwendung entwickelt werden. Die Implementierung einer Lookup-Table für die
+                            Testkonfiguration ermöglichte eine effiziente Verwaltung der Signalparameter und Toleranzen.
+                        </p>
+                    </div>
+                    <div class="popup-section">
+                        <h3>GitHub Repository</h3>
+                        <p><a href="https://github.com/wissemcharni/ResistorNetworkTester" class="nav-link"
+                                target="_blank"
+                                rel="noopener noreferrer">https://github.com/wissemcharni/ResistorNetworkTester</a></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- IoT Dashboard Project Popup -->
-    <div id="iot-popup" class="portfolio-popup-overlay">
-        <div class="portfolio-popup-content">
-            <div class="portfolio-popup-header">
-                <h2 class="portfolio-popup-title">IoT Monitoring Dashboard</h2>
-                <p class="portfolio-popup-subtitle">Real-time Sensor Data Visualization</p>
-                <span class="portfolio-popup-close" data-popup="iot-popup">&times;</span>
-            </div>
-            <div class="portfolio-popup-body">
-                <div class="popup-section">
-                    <h3>🎯 Projektübersicht</h3>
-                    <p>Entwicklung eines Real-time Dashboards zur Überwachung und Visualisierung von IoT-Sensordaten. Das System ermöglicht die kontinuierliche Überwachung von Temperatur, Luftfeuchtigkeit und anderen Umweltparametern mit automatischen Benachrichtigungen bei kritischen Werten.</p>
+        <!-- IoT Dashboard Project Popup -->
+        <div id="iot-popup" class="portfolio-popup-overlay">
+            <div class="portfolio-popup-content">
+                <div class="portfolio-popup-header">
+                    <h2 class="portfolio-popup-title">IoT Monitoring Dashboard</h2>
+                    <p class="portfolio-popup-subtitle">Real-time Sensor Data Visualization</p>
+                    <span class="portfolio-popup-close" data-popup="iot-popup">&times;</span>
                 </div>
+                <div class="portfolio-popup-body">
+                    <div class="popup-section">
+                        <h3>🎯 Projektübersicht</h3>
+                        <p>Entwicklung eines Real-time Dashboards zur Überwachung und Visualisierung von
+                            IoT-Sensordaten.
+                            Das System ermöglicht die kontinuierliche Überwachung von Temperatur, Luftfeuchtigkeit und
+                            anderen Umweltparametern mit automatischen Benachrichtigungen bei kritischen Werten.</p>
+                    </div>
 
-                <div class="popup-section">
-                    <h3>🔧 Technische Details</h3>
-                    <div class="project-details">
-                        <div class="detail-item">
-                            <div class="detail-label">Backend</div>
-                            <div class="detail-value">Python Flask</div>
+                    <div class="popup-section">
+                        <h3>🔧 Technische Details</h3>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Backend</div>
+                                <div class="detail-value">Python Flask</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Frontend</div>
+                                <div class="detail-value">React.js</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Protokoll</div>
+                                <div class="detail-value">MQTT</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Sensoren</div>
+                                <div class="detail-value">50+ aktive Geräte</div>
+                            </div>
                         </div>
-                        <div class="detail-item">
-                            <div class="detail-label">Frontend</div>
-                            <div class="detail-value">React.js</div>
-                        </div>
-                        <div class="detail-item">
-                            <div class="detail-label">Protokoll</div>
-                            <div class="detail-value">MQTT</div>
-                        </div>
-                        <div class="detail-item">
-                            <div class="detail-label">Sensoren</div>
-                            <div class="detail-value">50+ aktive Geräte</div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">MQTT</span>
+                            <span class="tech-tag">WebSocket</span>
+                            <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">Raspberry Pi</span>
                         </div>
                     </div>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">React.js</span>
-                        <span class="tech-tag">MQTT</span>
-                        <span class="tech-tag">WebSocket</span>
-                        <span class="tech-tag">Chart.js</span>
-                        <span class="tech-tag">SQLite</span>
-                        <span class="tech-tag">Raspberry Pi</span>
+
+                    <div class="popup-section">
+                        <h3>📈 Wichtige Errungenschaften</h3>
+                        <ul class="achievements-list">
+                            <li>Real-time Datenvisualisierung mit Chart.js und WebSocket-Verbindungen</li>
+                            <li>MQTT-Broker Integration für effiziente IoT-Kommunikation</li>
+                            <li>Automatisches Alerting-System bei kritischen Sensorwerten</li>
+                            <li>Historische Datenanalyse mit Trend-Visualisierung</li>
+                            <li>Mobile-responsive Dashboard für Monitoring unterwegs</li>
+                            <li>Konfigurierbare Schwellenwerte und Benachrichtigungen</li>
+                            <li>Unterstützung für 50+ gleichzeitige Sensoren</li>
+                        </ul>
                     </div>
-                </div>
 
-                <div class="popup-section">
-                    <h3>📈 Wichtige Errungenschaften</h3>
-                    <ul class="achievements-list">
-                        <li>Real-time Datenvisualisierung mit Chart.js und WebSocket-Verbindungen</li>
-                        <li>MQTT-Broker Integration für effiziente IoT-Kommunikation</li>
-                        <li>Automatisches Alerting-System bei kritischen Sensorwerten</li>
-                        <li>Historische Datenanalyse mit Trend-Visualisierung</li>
-                        <li>Mobile-responsive Dashboard für Monitoring unterwegs</li>
-                        <li>Konfigurierbare Schwellenwerte und Benachrichtigungen</li>
-                        <li>Unterstützung für 50+ gleichzeitige Sensoren</li>
-                    </ul>
-                </div>
-
-                <div class="popup-section">
-                    <h3>💡 Herausforderungen & Lösungen</h3>
-                    <p>Die größte Herausforderung lag in der Handhabung großer Datenmengen in Echtzeit ohne Performance-Verlust. Durch die Implementierung effizienter Datenstrukturen und WebSocket-basierter Kommunikation konnte ich eine flüssige Benutzererfahrung auch bei hohem Datenaufkommen gewährleisten. Die Integration verschiedener Sensortypen erforderte ein flexibles Protokoll-Management-System.</p>
+                    <div class="popup-section">
+                        <h3>💡 Herausforderungen & Lösungen</h3>
+                        <p>Die größte Herausforderung lag in der Handhabung großer Datenmengen in Echtzeit ohne
+                            Performance-Verlust. Durch die Implementierung effizienter Datenstrukturen und
+                            WebSocket-basierter Kommunikation konnte ich eine flüssige Benutzererfahrung auch bei hohem
+                            Datenaufkommen gewährleisten. Die Integration verschiedener Sensortypen erforderte ein
+                            flexibles
+                            Protokoll-Management-System.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Medicare Dashboard Project Popup -->
-    <div id="Medicare-popup" class="portfolio-popup-overlay">
-        <div class="portfolio-popup-content">
-            <div class="portfolio-popup-header">
-                <h2 class="portfolio-popup-title">Medicare Dashboard</h2>
-                <p class="portfolio-popup-subtitle">SaaS-Plattform für Ärzte- und Praxisverwaltung</p>
-                <span class="portfolio-popup-close" data-popup="Medicare-popup">&times;</span>
-            </div>
-            <div class="portfolio-popup-body">
-                <div class="popup-section">
-                    <h3>🎯 Projektübersicht</h3>
-                    <p>Entwicklung einer modernen Webanwendung zur Verwaltung von Patienten, Terminen und medizinischen Dateien für Ärzte und Praxen. Das System bietet rollenbasierten Zugriff (Arzt & Assistent), flexible Preispläne und eine intuitive, responsive Benutzeroberfläche.</p>
+        <!-- Medicare Dashboard Project Popup -->
+        <div id="Medicare-popup" class="portfolio-popup-overlay">
+            <div class="portfolio-popup-content">
+                <div class="portfolio-popup-header">
+                    <h2 class="portfolio-popup-title">Medicare Dashboard</h2>
+                    <p class="portfolio-popup-subtitle">SaaS-Plattform für Ärzte- und Praxisverwaltung</p>
+                    <span class="portfolio-popup-close" data-popup="Medicare-popup">&times;</span>
                 </div>
+                <div class="portfolio-popup-body">
+                    <div class="popup-section">
+                        <h3>🎯 Projektübersicht</h3>
+                        <p>Entwicklung einer modernen Webanwendung zur Verwaltung von Patienten, Terminen und
+                            medizinischen
+                            Dateien für Ärzte und Praxen. Das System bietet rollenbasierten Zugriff (Arzt & Assistent),
+                            flexible Preispläne und eine intuitive, responsive Benutzeroberfläche.</p>
+                    </div>
 
-                <div class="popup-section">
-                    <h3>🔧 Technische Details</h3>
-                    <div class="project-details">
-                        <div class="detail-item">
-                            <div class="detail-label">Frontend</div>
-                            <div class="detail-value">React (TypeScript), Tailwind CSS</div>
+                    <div class="popup-section">
+                        <h3>🔧 Technische Details</h3>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Frontend</div>
+                                <div class="detail-value">React (TypeScript), Tailwind CSS</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Backend</div>
+                                <div class="detail-value">Supabase (PostgreSQL, Auth)</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Bezahlsystem</div>
+                                <div class="detail-value">Stripe</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Deployment</div>
+                                <div class="detail-value">Netlify</div>
+                            </div>
                         </div>
-                        <div class="detail-item">
-                            <div class="detail-label">Backend</div>
-                            <div class="detail-value">Supabase (PostgreSQL, Auth)</div>
-                        </div>
-                        <div class="detail-item">
-                            <div class="detail-label">Bezahlsystem</div>
-                            <div class="detail-value">Stripe</div>
-                        </div>
-                        <div class="detail-item">
-                            <div class="detail-label">Deployment</div>
-                            <div class="detail-value">Netlify</div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">Stripe</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
                         </div>
                     </div>
-                    <div class="tech-stack">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">Tailwind CSS</span>
-                        <span class="tech-tag">Supabase</span>
-                        <span class="tech-tag">Stripe</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">PostgreSQL</span>
+
+                    <div class="popup-section">
+                        <h3>📈 Wichtige Errungenschaften</h3>
+                        <ul class="achievements-list">
+                            <li>Rollenbasierter Zugriff: Arzt & Assistent (ab Pro-Plan)</li>
+                            <li>Preispläne mit Patientenlimit und Upgrade-Flow</li>
+                            <li>Integration von Stripe für Abonnements</li>
+                            <li>Upload und sichere Speicherung von medizinischen Dateien</li>
+                            <li>Responsives Design und Mehrsprachigkeits-Unterstützung</li>
+                            <li>Realistische Upgrade-Strategie zur Monetarisierung</li>
+                        </ul>
                     </div>
-                </div>
 
-                <div class="popup-section">
-                    <h3>📈 Wichtige Errungenschaften</h3>
-                    <ul class="achievements-list">                    
-                        <li>Rollenbasierter Zugriff: Arzt & Assistent (ab Pro-Plan)</li>
-                        <li>Preispläne mit Patientenlimit und Upgrade-Flow</li>
-                        <li>Integration von Stripe für Abonnements</li>
-                        <li>Upload und sichere Speicherung von medizinischen Dateien</li>
-                        <li>Responsives Design und Mehrsprachigkeits-Unterstützung</li>
-                        <li>Realistische Upgrade-Strategie zur Monetarisierung</li>                    
-                    </ul>
-                </div>
-
-                <div class="popup-section">
-                    <h3>💡 Herausforderungen & Lösungen</h3>
-                    <p>Die größte Herausforderung war es, eine flexible Architektur zu schaffen, die verschiedene Preispläne, Rollen und Patientengrenzen unterstützt. Durch Supabase-Richtlinien und ein sauberes Frontend-Handling konnten Funktionen gezielt pro Plan oder Rolle aktiviert oder deaktiviert werden, ohne die Codebasis unnötig zu verkomplizieren.</p>
+                    <div class="popup-section">
+                        <h3>💡 Herausforderungen & Lösungen</h3>
+                        <p>Die größte Herausforderung war es, eine flexible Architektur zu schaffen, die verschiedene
+                            Preispläne, Rollen und Patientengrenzen unterstützt. Durch Supabase-Richtlinien und ein
+                            sauberes
+                            Frontend-Handling konnten Funktionen gezielt pro Plan oder Rolle aktiviert oder deaktiviert
+                            werden, ohne die Codebasis unnötig zu verkomplizieren.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">03 EXPERIENCE</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">April 2025 – Dezember 2022</div>
-                    <div class="timeline-title">Software Developer</div>
-                    <div class="timeline-company">Selbständig</div>
-                    <p>Entwickelt wurde eine moderne SaaS‑Webanwendung für Ärzte und Praxen zur Verwaltung von Patienten, Terminen und Dateien.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">April 2024 – Dezember 2024</div>
-                    <div class="timeline-title">Software Developer</div>
-                    <div class="timeline-company">Erhard Partner Group, Alzenau</div>
-                    <p>Entwicklung und Optimierung leistungsstarker C++ Anwendungen für die EPG ONE Supply Chain Suite</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">April 2023 – November 2023</div>
-                    <div class="timeline-title">Embedded Systems Research Intern</div>
-                    <div class="timeline-company">Hochschule Darmstadt</div>
-                    <p>Forschungsunterstützung bei QR-PACE-Algorithmus auf ARMCortex-M4</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">August 2021 – März 2023</div>
-                    <div class="timeline-title">Software Developer Trainee</div>
-                    <div class="timeline-company">Deutsche Telekom, Hannover</div>
-                    <p>Entwicklung von Python-Skripten für Netzwerk-Automatisierung</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Februar 2019 – August 2019</div>
-                    <div class="timeline-title">Übungsleiter Programmierung</div>
-                    <div class="timeline-company">Hochschule Darmstadt</div>
-                    <p>Übungen betreuen und Hausaufgaben kontrollieren und korrigieren</p>
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="container">
+                <h2 class="section-title">03 EXPERIENCE</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">April 2025 – Dezember 2022</div>
+                        <div class="timeline-title">Software Developer</div>
+                        <div class="timeline-company">Selbständig</div>
+                        <p>Entwickelt wurde eine moderne SaaS‑Webanwendung für Ärzte und Praxen zur Verwaltung von
+                            Patienten, Terminen und Dateien.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">April 2024 – Dezember 2024</div>
+                        <div class="timeline-title">Software Developer</div>
+                        <div class="timeline-company">Erhard Partner Group, Alzenau</div>
+                        <p>Entwicklung und Optimierung leistungsstarker C++ Anwendungen für die EPG ONE Supply Chain
+                            Suite
+                        </p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">April 2023 – November 2023</div>
+                        <div class="timeline-title">Embedded Systems Research Intern</div>
+                        <div class="timeline-company">Hochschule Darmstadt</div>
+                        <p>Forschungsunterstützung bei QR-PACE-Algorithmus auf ARMCortex-M4</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">August 2021 – März 2023</div>
+                        <div class="timeline-title">Software Developer Trainee</div>
+                        <div class="timeline-company">Deutsche Telekom, Hannover</div>
+                        <p>Entwicklung von Python-Skripten für Netzwerk-Automatisierung</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Februar 2019 – August 2019</div>
+                        <div class="timeline-title">Übungsleiter Programmierung</div>
+                        <div class="timeline-company">Hochschule Darmstadt</div>
+                        <p>Übungen betreuen und Hausaufgaben kontrollieren und korrigieren</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">CONTACT</h2>
-                <p style="margin-bottom: 2rem;">Haben Sie ein Projekt im Kopf? Lassen Sie uns darüber sprechen und gemeinsam etwas Großartiges schaffen.</p>
-                <p><strong>Email:</strong> wissemcherni75@gmail.com</p>
-                <p><strong>Tel:</strong> +49-173-910-6007</p>
-            </div>
-            <!-- <div class="contact-form">
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">CONTACT</h2>
+                    <p style="margin-bottom: 2rem;">Haben Sie ein Projekt im Kopf? Lassen Sie uns darüber sprechen und
+                        gemeinsam etwas Großartiges schaffen.</p>
+                    <p><strong>Email:</strong> wissemcherni75@gmail.com</p>
+                    <p><strong>Tel:</strong> +49-173-910-6007</p>
+                </div>
+                <!-- <div class="contact-form">
                 <form id="contactForm">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
                         <div class="form-group">
@@ -1853,319 +1930,168 @@
                     <button type="submit" class="submit-btn">SENDEN</button>
                 </form>
             </div> -->
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
-                if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-                
-                // Update active link
-                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
+        <script>
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                    // Update active link
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
             });
-        });
 
-        // Navbar background change on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(44, 62, 80, 0.98)';
-            } else {
-                navbar.style.background = 'rgba(44, 62, 80, 0.95)';
+            // Navbar background change on scroll
+            window.addEventListener('scroll', function () {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.style.background = 'rgba(44, 62, 80, 0.98)';
+                } else {
+                    navbar.style.background = 'rgba(44, 62, 80, 0.95)';
+                }
+            });
+
+            // Animate skill bars on scroll
+            const observerOptions = { threshold: 0.5, rootMargin: '0px 0px -100px 0px' };
+            const skillsSection = document.querySelector('.skills');
+            if (skillsSection) {
+                const observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.querySelectorAll('.skill-progress').forEach(bar => {
+                                const width = bar.style.width;
+                                bar.style.width = '0%';
+                                setTimeout(() => { bar.style.width = width; }, 200);
+                            });
+                        }
+                    });
+                }, observerOptions);
+                observer.observe(skillsSection);
             }
-        });
 
-        // Animate skill bars on scroll
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const skillBars = entry.target.querySelectorAll('.skill-progress');
-                    skillBars.forEach(bar => {
-                        const width = bar.style.width;
-                        bar.style.width = '0%';
-                        setTimeout(() => {
-                            bar.style.width = width;
-                        }, 200);
-                    });
-                }
-            });
-        }, observerOptions);
-
-        observer.observe(document.querySelector('.skills'));
-
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Vielen Dank für Ihre Nachricht! Ich werde mich bald bei Ihnen melden.');
-            this.reset();
-        });
-
-        // Add scroll animations to timeline items
-        const timelineObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.3 });
-
-        document.querySelectorAll('.timeline-item').forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(30px)';
-            item.style.transition = 'all 0.6s ease';
-            timelineObserver.observe(item);
-        });
-
-        // Portfolio items hover effect
-        document.querySelectorAll('.portfolio-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Skill category animations
-        document.querySelectorAll('.skill-category').forEach((category, index) => {
-            category.style.opacity = '0';
-            category.style.transform = 'translateY(30px)';
-            category.style.transition = 'all 0.6s ease';
-            category.style.transitionDelay = `${index * 0.1}s`;
-        });
-
-        const categoryObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.3 });
-
-        document.querySelectorAll('.skill-category').forEach(category => {
-            categoryObserver.observe(category);
-        });
-
-        // Languages Popup Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const languagesBox = document.getElementById('languagesBox');
-            const popup = document.getElementById('languagesPopup');
-            const closeBtn = document.querySelector('.close-popup');
-
-            // Open popup when languages box is clicked
-            languagesBox.addEventListener('click', function() {
-                popup.style.display = 'block';
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
-                
-                // Animate progress bars
-                setTimeout(() => {
-                    const progressBars = popup.querySelectorAll('.language-progress');
-                    progressBars.forEach(bar => {
-                        const width = bar.style.width;
-                        bar.style.width = '0%';
-                        setTimeout(() => {
-                            bar.style.width = width;
-                        }, 100);
-                    });
-                }, 200);
+            // Timeline scroll animations
+            const timelineObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.3 });
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'all 0.6s ease';
+                timelineObserver.observe(item);
             });
 
-            // Close popup when X is clicked
-            closeBtn.addEventListener('click', function() {
-                popup.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Re-enable background scrolling
+            // Skill category scroll animations
+            const categoryObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.3 });
+            document.querySelectorAll('.skill-category').forEach((category, index) => {
+                category.style.opacity = '0';
+                category.style.transform = 'translateY(30px)';
+                category.style.transition = 'all 0.6s ease';
+                category.style.transitionDelay = `${index * 0.1}s`;
+                categoryObserver.observe(category);
             });
 
-            // Close popup when clicking outside of it
-            popup.addEventListener('click', function(e) {
-                if (e.target === popup) {
-                    popup.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-
-            // Programming Languages Popup Functionality
-            const programmingBox = document.getElementById('programmingBox');
-            const programmingPopup = document.getElementById('programmingPopup');
-            const closeProgrammingBtn = document.getElementById('closeProgrammingPopup');
-
-            // Open programming popup when box is clicked
-            programmingBox.addEventListener('click', function() {
-                programmingPopup.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-                
-                // Animate progress bars
-                setTimeout(() => {
-                    const progressBars = programmingPopup.querySelectorAll('.language-progress');
-                    progressBars.forEach(bar => {
-                        const width = bar.style.width;
-                        bar.style.width = '0%';
-                        setTimeout(() => {
-                            bar.style.width = width;
-                        }, 100);
-                    });
-                }, 200);
-            });
-
-            // Close programming popup when X is clicked
-            closeProgrammingBtn.addEventListener('click', function() {
-                programmingPopup.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
-
-            // Close programming popup when clicking outside
-            programmingPopup.addEventListener('click', function(e) {
-                if (e.target === programmingPopup) {
-                    programmingPopup.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-
-            // Portfolio Popup Functionality 
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-            const portfolioPopups = document.querySelectorAll('.portfolio-popup-overlay');
-            const portfolioCloseButtons = document.querySelectorAll('.portfolio-popup-close');
-
-            // Open portfolio popup when portfolio item is clicked
-            portfolioItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const projectId = this.getAttribute('data-project');
-                    const popup = document.getElementById(projectId + '-popup');
-                    
+            // Portfolio popup open & close
+            document.querySelectorAll('.portfolio-item').forEach(item => {
+                item.addEventListener('click', function () {
+                    const project = this.getAttribute('data-project');
+                    const popup = document.getElementById(`${project}-popup`);
                     if (popup) {
                         popup.style.display = 'block';
                         document.body.style.overflow = 'hidden';
-                        
-                        // Add entrance animation
-                        popup.style.animation = 'fadeIn 0.3s ease';
-                        const popupContent = popup.querySelector('.portfolio-popup-content');
-                        popupContent.style.animation = 'slideIn 0.3s ease';
                     }
                 });
             });
-
-            // Close portfolio popup when X button is clicked
-            portfolioCloseButtons.forEach(closeBtn => {
-                closeBtn.addEventListener('click', function() {
+            document.querySelectorAll('.portfolio-popup-close').forEach(btn => {
+                btn.addEventListener('click', function () {
                     const popupId = this.getAttribute('data-popup');
                     const popup = document.getElementById(popupId);
-                    
                     if (popup) {
                         popup.style.display = 'none';
-                        document.body.style.overflow = 'auto';
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+            document.querySelectorAll('.portfolio-popup-overlay').forEach(overlay => {
+                overlay.addEventListener('click', function (e) {
+                    if (e.target === overlay) {
+                        overlay.style.display = 'none';
+                        document.body.style.overflow = '';
                     }
                 });
             });
 
-            // Close portfolio popup when clicking outside
-            portfolioPopups.forEach(popup => {
-                popup.addEventListener('click', function(e) {
-                    if (e.target === popup) {
-                        popup.style.display = 'none';
-                        document.body.style.overflow = 'auto';
+            // Languages popup open & close
+            const languagesBox = document.getElementById('languagesBox');
+            const languagesPopup = document.getElementById('languagesPopup');
+            const languagesClose = languagesPopup.querySelector('.close-popup');
+            if (languagesBox && languagesPopup && languagesClose) {
+                languagesBox.addEventListener('click', () => {
+                    languagesPopup.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+                languagesClose.addEventListener('click', () => {
+                    languagesPopup.style.display = 'none';
+                    document.body.style.overflow = '';
+                });
+                languagesPopup.addEventListener('click', e => {
+                    if (e.target === languagesPopup) {
+                        languagesPopup.style.display = 'none';
+                        document.body.style.overflow = '';
                     }
                 });
-            });
+            }
 
-            // Close all popups with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    // Close language popups
-                    if (programmingPopup.style.display === 'block') {
+            // Programming languages popup open & close
+            const programmingBox = document.getElementById('programmingBox');
+            const programmingPopup = document.getElementById('programmingPopup');
+            const programmingClose = programmingPopup.querySelector('.close-popup');
+            if (programmingBox && programmingPopup && programmingClose) {
+                programmingBox.addEventListener('click', () => {
+                    programmingPopup.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+                programmingClose.addEventListener('click', () => {
+                    programmingPopup.style.display = 'none';
+                    document.body.style.overflow = '';
+                });
+                programmingPopup.addEventListener('click', e => {
+                    if (e.target === programmingPopup) {
                         programmingPopup.style.display = 'none';
-                        document.body.style.overflow = 'auto';
+                        document.body.style.overflow = '';
                     }
-                    if (popup.style.display === 'block') {
-                        popup.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }
-                    
-                    // Close portfolio popups
-                    portfolioPopups.forEach(portfolioPopup => {
-                        if (portfolioPopup.style.display === 'block') {
-                            portfolioPopup.style.display = 'none';
-                            document.body.style.overflow = 'auto';
-                        }
-                    });
-                }
-            });
-
-            // Portfolio popup scroll animations
-            portfolioPopups.forEach(popup => {
-                const sections = popup.querySelectorAll('.popup-section');
-                sections.forEach((section, index) => {
-                    section.style.opacity = '0';
-                    section.style.transform = 'translateY(30px)';
-                    section.style.transition = 'all 0.6s ease';
-                    section.style.transitionDelay = `${index * 0.1}s`;
                 });
+            }
 
-                // Observer for popup sections
-                const popupObserver = new IntersectionObserver(function(entries) {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-                        }
-                    });
-                }, { threshold: 0.3 });
-
-                sections.forEach(section => {
-                    popupObserver.observe(section);
+            // Form submission alert (only if form exists and not commented out)
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    alert('Vielen Dank für Ihre Nachricht! Ich werde mich bald bei Ihnen melden.');
+                    this.reset();
                 });
-            });
-
-            // Tech tag hover animations
-            document.querySelectorAll('.tech-tag').forEach(tag => {
-                tag.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-2px) scale(1.05)';
-                });
-                
-                tag.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-
-            // Achievement list item animations
-            document.querySelectorAll('.achievements-list li').forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateX(-20px)';
-                item.style.transition = 'all 0.5s ease';
-                item.style.transitionDelay = `${index * 0.1}s`;
-                
-                // Animate when popup opens
-                const observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateX(0)';
-                        }
-                    });
-                }, { threshold: 0.3 });
-                
-                observer.observe(item);
-            });
-        });
-    </script>
+            }
+        </script>
 </body>
+
 </html>
